@@ -1,0 +1,31 @@
+
+___________Parrafo 1_________________
+Reqerimiento: El comerciante podra ingresar una solicitud de pedido.
+Tipo: Funcional.
+Prioridad: Esencial.
+Descripcion: El comerciante debera poder ingresar una solicitud de pedido de envio.
+
+
+Reqerimiento: El sistema debe proponer una lista de candidatos disponibles.
+Tipo: Funcional.
+Prioridad: Esencial.
+Descripcion:
+
+Reqerimiento: Permitir eleccion de mensajero
+Tipo:
+Prioridad:
+Descripcion:
+
+Reqerimiento: 
+Tipo:
+Prioridad:
+Descripcion:
+
+Reqerimiento:
+Tipo:
+Prioridad:
+Descripcion:
+
+
+
+
