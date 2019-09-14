@@ -2,7 +2,20 @@
 var cabecera=document.getElementById("cabecera");
 var logo= document.getElementById("logo");
 var functional=document.getElementById("functional");
+var hamburger=document.getElementById("hamburger");
+var menulateral=document.getElementById("menulateral");
+var fondo=document.getElementById("fondo");
+
+
+fondo.addEventListener('click', function(e)
+{
+  menulateral.style.transform="translate(200%)";
+  hamburger.style.transform="translate(0)";
+                            
   
+});
+
+
   document.addEventListener('scroll', function(e)
   {
   
@@ -21,6 +34,8 @@ var functional=document.getElementById("functional");
   cabecera.style.top="0";
   cabecera.style.position="fixed";
   cabecera.style.borderRadius="0";
+
+
     
  }
 
@@ -29,7 +44,6 @@ var functional=document.getElementById("functional");
  else{
    cabecera.style.position="absolute";
    cabecera.style.top="11%";
-   cabecera.style.borderRadius="0 120px 0 0";
  }
 
 
@@ -51,5 +65,21 @@ var functional=document.getElementById("functional");
     
     }
   });
+
+  function mostrarMenu()
+{
+  menulateral.style.transform="translate(0)";
+  hamburger.style.transform="translate(200%)";
+  
+  
+}
+
+function closeMenu()
+{
+  menulateral.style.transform="translate(200%)";
+  hamburger.style.transform="translate(0)";
+}
+
+
 
   

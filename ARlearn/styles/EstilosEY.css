@@ -1,0 +1,540 @@
+
+*{
+    font-family: 'Quicksand', sans-serif;
+    text-decoration: none;
+}
+
+body{
+    padding: 0;
+    
+    width:100%;
+    margin: auto;
+    overflow-x: hidden;
+}
+header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.cabecera{
+    position: absolute;
+    
+ 
+    align-items: center;
+   background-color: rgba(255, 255, 255, 0.3);
+  
+    
+    width: 100%;
+    height: 2em;
+    padding-top: 3em;;
+    top: 11%;
+    margin: 0;
+    box-shadow: 0 8px 12px -12px rgba(13, 15, 160, 0.377) inset;
+    justify-content: center;
+    align-items: center;
+    transition: border-radius 1s ease-in-out, background-color 0.1s ease-in-out;
+
+  
+z-index: 1040;
+
+  
+}
+
+ul
+{
+
+    position: absolute;
+    top: 0;;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    display: flexbox;
+    flex: 1;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    justify-content: space-between;
+    margin-top: 20px;
+
+}
+
+ul li{
+    width: auto;
+    display: inline-flex;
+    flex-direction: row;
+    font-size: 1.2em;
+    padding: 0.3em 1.5em;
+    margin-top: 0.1em;
+    border-radius: 0.5em;
+    transition: all 0.5s  ease-in-out;
+    font-family: 'Quicksand', sans-serif;
+    cursor: pointer;
+    text-decoration: none;
+    color: black;
+
+}
+
+
+li:hover{
+    
+    color:rgb(20, 145, 207);
+}
+
+.logo{
+    position: absolute;
+    float: left;
+    width: 12rem;
+    height: auto;
+   z-index: 99999;
+   
+   
+    height: auto;
+   
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items:left;
+    padding: 2em;
+    border-radius:50%;
+    background-color: white;
+    box-shadow: 6px 12px 6px -6px rgba(0, 0, 0, 0.6), -6px -6px 12px 0 rgba(0,0,0,0.2)  inset;
+    transition: all 0.5s ease-in-out;
+    
+}
+
+.logo img {
+    width: 100%; 
+    position: relative;
+}
+
+
+
+.fondo, .fondo2{
+    
+    position: relative;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+     margin-top: 200px;
+    height: 600px;;
+
+   
+    width: 100%;
+   
+    background-color: blue;
+    background-image: url(images/font.svg);
+    background-size: cover;
+    border-radius: 0 0 12px 12px;
+
+    font-size: 3em;
+    color: white;
+    background-color: aqua;
+    font-family: "Dosis";
+
+    box-shadow: 6px 12px 6px -6px rgba(0, 0, 0, 0.418) inset;
+}
+
+.fondo2{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    width: 100%;
+    height: 900px;
+    margin: 0;
+    background-image: url(../images/banner.png);
+    position: absolute;
+    top:60px;
+
+}
+
+@keyframes downHeader
+{
+    from
+     {
+      margin-top:-600px;
+
+    }
+
+    to{
+        margin-top:0;
+    }
+}
+
+.contenedor
+{
+  
+    display: flex;
+    flex-direction: row;
+    width: 70%;
+    height: auto;
+    margin: auto;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.contenedor:first-child{
+    margin-top: 200px;
+}
+
+
+
+
+.space{
+    margin-bottom: 200px;
+}
+
+.space:first-child{
+    margin-top: 200px;
+}
+
+.welcome{
+    
+   
+    
+    
+    font-size: 0.8em;
+    text-align: center;
+
+    font-family: "Quicksand";
+    color: black;
+    text-shadow: 0 0 6px rgba(255, 255, 255, 0.8);
+
+
+    
+}
+
+
+
+@keyframes iluminate{
+
+    0%,25%
+    {
+        text-shadow: 0 0 0px;
+    }
+
+    25%,80%
+    {
+        text-shadow: 0 0 20px;
+    }
+    
+    80%,100%
+    {
+        text-shadow: 0 0 0px;
+    }
+
+}
+
+
+
+.boton,.boton2{
+    position: relative;
+display: inline-flex;
+font-family: 'Quicksand', sans-serif;
+width: auto;
+padding: 0.6em;
+margin-right: 0.6em;
+margin-left: 0.5em;
+text-align: center;
+justify-content: center;
+align-items: center;
+height: auto;
+border-radius: 1.5em;
+background-color: #1071A1;
+border: 2px solid rgb(36, 18, 106);
+color: aliceblue;
+font-size: 0.45em;
+transition: all 0.5s ease-in-out;
+z-index: 500;
+
+    
+}
+
+.boton::before
+{
+    z-index: -10;
+    content: "";
+    display: flex;
+position: absolute;
+width: 100%;
+height: 100%;
+border-radius: 1.5em;
+top: 0;
+left: 0;;
+border: 2px solid whitesmoke;
+transition: all 0.5s ease-in-out;
+transition:  0.5s ease-in-out;
+opacity: 0;
+
+}
+
+
+
+
+.boton:hover::before
+{
+    top:35%;
+    left: -15%;
+    opacity: 1;
+
+}
+
+
+
+
+
+.boton2{
+    border: 2px solid aliceblue;
+    background-color: aliceblue;
+    color: rgb(36, 18, 106);
+    font-weight: bolder;
+}
+
+.boton:hover{
+    border: 2px solid aliceblue;
+    background-color: aliceblue;
+    color: rgb(36, 18, 106);
+    font-weight: bolder;
+}
+
+.boton2:hover{
+    background-color: #1071A1;
+border: 2px solid rgb(36, 18, 106);
+color: aliceblue;
+font-size: 0.5em;
+font-weight: bolder;
+}
+
+.boton2::before
+{
+    z-index: -10;
+    content: "";
+    display: flex;
+position: absolute;
+width: 100%;
+height: 100%;
+border-radius: 1.5em;
+top: 15%;
+left: -15%;
+border: 2px dashed whitesmoke;
+transition: all 0.5s ease-in-out;
+transition:  0.5s ease-in-out;
+opacity: 0;
+
+}
+
+
+
+
+.boton2:hover::before
+{
+    top: 15%;
+    left: -15%;
+    opacity: 1;
+
+}
+
+
+  
+  .especialidades
+  {
+      display: flexbox;
+    width: 100%;
+    height: auto;
+   
+    flex: 1;
+  
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    margin-top: 120px;
+    margin-bottom: 60px;
+    
+
+    box-shadow: 0 0px 6px 1px rgba(83, 78, 78, 0.411);
+
+    background-color: #FBFBFB;
+    background-image: url(images/circuits.svg);
+    margin-bottom: 20px;
+  }
+
+  .dentro,.dentro2{
+     
+      position: relative;
+      width: 200px;
+      height: 150px;;
+      display: inline-flex;
+      margin-left: 100px;;
+      margin-right: 100px;
+      margin-top: 30px;
+      width: 140px;
+      height: 190px;
+      animation: all 0.5s ease-in-out;
+      
+      
+  }
+
+ 
+  .dentro2{
+      width: 200px;
+      height: 100px;}
+
+  .perspective{
+     position: absolute;
+  top: 100%;
+  left: 15%;
+    font-size: 1.1em;
+   transition: all 0.5s ease-in-out;
+   
+   
+
+    
+  }
+
+ 
+  
+  .dentro:hover .perspective
+  {
+      
+ 
+    transform: translate(0px, 20px) scale(1.1);
+    font-weight: bolder;
+    color: #1071A1;
+   
+  }
+
+  .lines
+  {
+      position: absolute;
+    width: 1220px;
+    height: 5px;
+    background-color: white;
+    left: 100%;
+
+  }
+
+
+  .menulateral
+  {
+    position: absolute;
+    display: flex;
+    flex-wrap: wrap;
+    right: 0;
+    top: 30px;
+    width: 180px;
+    height: 1200px;
+    background-color: rgba(0, 0, 0, 0.6);
+    transform: translate(100%);
+    transition: 0.5s all ease-in-out;
+    opacity: 0;
+    border-radius: 30px 30px 0 0 ;
+  }
+
+
+
+
+  .menulateral ul {
+     
+    
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 2em;
+    top: 0;
+    left: 0;
+    flex-direction: row;
+    justify-content: center;
+    align-items: left;
+    text-align: center;
+    list-style-type: none;
+    padding: 0px;
+  }
+  .menulateral ul li {
+    width: calc(60% - 15px);
+    height: auto;
+    margin: 0 15px 20px 0;
+    color: #FBFBFB;
+  }
+
+ .menulateral ul li:hover{
+    
+    color:rgb(20, 145, 207);
+    
+}
+  ul li.ad {
+    background-color: #ff00d8;
+  }
+
+
+  
+
+  .hamburger
+  {
+    position: absolute;
+    width: 50px;
+    height: 6px;
+    border-radius: 20px;
+    background-color: white;
+    top: 100px;
+    right: 20px;
+
+    opacity: 0;
+    transition: 0.3s all ease-in-out;
+  }
+
+  .hamburger:before{
+      content: "";
+      position: relative;
+      display: block;
+      width: 0%;
+      height: 100%;
+      margin-top: -10px;
+      background-color: white;
+      border-radius: 20px;
+      transition: 0.6s all ease-in-out;
+
+
+
+  }
+
+  .hamburger:after{
+    content: "";
+    position: relative;
+    display: block;
+    width: 0%;
+    height: 100%;
+    margin-top: 14px;
+    background-color: white;
+    border-radius: 20px;
+    transition: 0.7s all ease-in-out;
+
+}
+
+.trigger{
+    position: absolute;
+    width: 50px;
+    height: 30px;
+    background-color: black;
+    top: -14px;
+    right: 0px;
+    opacity:0;
+    transition: 0.5s all ease-in-out;
+}
+  
+.close{
+    display: flex;
+    position: relative;
+    top: 0;
+    background-color: rgb(247, 64, 64);
+    color: black;
+    width: 100%;
+    height: 30px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    border-radius: 30px 30px 0 0;
+
+    
+}

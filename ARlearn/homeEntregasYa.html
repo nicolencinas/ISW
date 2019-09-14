@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Entregas YA | Mainpage </title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="styles/EstilosEY.css">
+  <link rel="stylesheet" href="styles/animate.css">
+
+
+  <link href="https://fonts.googleapis.com/css?family=Quicksand&display=swap" rel="stylesheet">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <script src="funcionalidad.js"></script>
+
+<style>
+ 
+
+
+
+ @media screen and (min-width: 1301px)
+ {
+   
+
+ }
+  @media screen and (max-width: 1300px)
+  {
+
+   
+    ul{
+     
+   display: none;
+    }
+   .cabecera{
+     display: none;
+   }
+
+   .hamburger{
+    opacity: 1;
+    
+    
+   }
+
+   .hamburger::before{
+    width: 100%;
+   }
+
+   .hamburger::after{
+    width: 100%;
+   }
+
+
+   .contenedor{
+     margin-top: 150px;
+   }
+
+   .menulateral{
+     opacity: 1;
+   }
+
+  
+
+
+    
+
+  }
+  @media screen and (max-width: 607px)
+  {
+
+
+    .boton,.boton2{
+      display: block;
+      justify-content: center;
+      margin: auto;
+      margin-bottom: 30px;
+    }
+
+    ul li{
+      margin-left: 50px;
+    }
+
+    .contenedor{
+     margin-top: 150px;
+     width: 100%;
+    }
+
+    .contenedor p{
+      font-size: 0.7em;
+    }
+
+   .logo{
+     padding: 3em;
+     width: 7em;
+   }
+
+  }
+   
+   @media screen and (max-width: 601px)
+  {
+
+    .logo{
+      width: 7em;
+      padding: 1.5em;
+     
+    }
+
+  }
+
+  @media screen and (max-width: 320px )
+  {
+
+    .logo{
+      width: 7em;
+      padding: 1.5em;
+     
+    }
+
+  }
+
+  @media screen and (max-width: 360px )
+  {
+
+    .logo{
+      width: 7em;
+      padding: 1.5em;
+     
+    }
+
+  }
+
+  
+
+ 
+</style>
+</head>
+<div class="logo" id="logo">
+  <img src="images/Entregas.gif" alt="">
+    </div>
+<header>
+   
+
+<div class="cabecera animated bounceInLeft delay-500ms" id="cabecera">
+
+ 
+ 
+  <ul id="sticky">
+    <a href="who.html"> <li>Nosotros  </li></a>
+    <li>Soluciones</li>
+    <a href="services.html"><li>Servicios Profesionales</li></a>
+    <a href="clients.html"> <li>Clientes</li></a>
+    <a href="contact.html"><li>Contacto</li></a>
+  </ul>
+
+</div>
+
+</header>
+
+<body >
+
+  <div class="fondo2" id="fondo">
+
+    <div class="contenedor">
+      <p class="welcome" >Bienvenidos a Entregas YA</p>
+  </div>
+
+  <div class="contenedor">
+
+  </div>
+
+  
+    
+
+  </div>
+
+  <div class="hamburger" id="hamburger">
+    <div class="trigger" onclick="mostrarMenu()">
+
+    </div>
+
+  </div>
+  <div class="menulateral" id="menulateral" onclick="closeMenu()" oncontextmenu="closeMenu()">
+
+ 
+    <div class="close" onclick="closeMenu()">
+ X
+    </div>
+ 
+              <ul id="sticky">
+                <a href="who.html"> <li>Nosotros  </li></a>
+                <li>Soluciones</li>
+                <a href="services.html"><li>Servicios</li></a>
+                <a href="clients.html"> <li>Clientes</li></a>
+                <a href="contact.html"><li>Contacto</li></a>
+              </ul>
+            
+            </div>
+     
+
+ 
+
+<script src="js/funcionalidad.js">
+
+
+</script>
+
+
+
+</body>
+</html>
