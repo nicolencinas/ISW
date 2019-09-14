@@ -1,0 +1,63 @@
+
+
+
+.images{
+    display: inline-block;
+    width:15%;
+    flex: 1;
+    margin: 5%;
+
+}
+
+.logo{
+    position: absolute;
+    float: left;
+    width: 200px;
+    height: 400px;
+   z-index: 99999;
+   
+    height: auto;
+   
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items:left;
+    padding: 4em;
+    border-radius: 0 0 2em 2em;
+    background-color: white;
+    box-shadow: 6px 12px 6px -6px rgba(0, 0, 0, 0.219);
+    transition: all 0.5s ease-in-out;
+    
+}
+
+.contenedor2
+{
+    position: relative;
+    display: block;
+    
+    justify-content: center;
+    align-items: center;
+   
+    margin-left: auto;
+   
+    width: 100%;
+    height: auto;
+    
+    
+}
+
+.contenedor2:first-child
+{
+margin-top: 100px;
+
+
+}
+
+.video{
+
+    position: relative;
+    width: 40%;
+    display: inline-block;
+    justify-content: center;
+     align-items: center;
+}
