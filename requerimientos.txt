@@ -18,7 +18,7 @@ Descripcion: El usuario debera poder seleccionar de la lista de candidatos retor
 
 Reqerimiento: Enviar notificacion para realizar entrega
 Tipo: Funcional	
-Prioridad: Escencial
+Prioridad: Escencial 
 Descripcion: El repartidor recibira una notificacion del pedido para poder realizar el envio.
 
 Reqerimiento:
