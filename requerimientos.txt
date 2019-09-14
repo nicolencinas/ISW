@@ -9,12 +9,12 @@ Descripcion: El comerciante debera poder ingresar una solicitud de pedido de env
 Reqerimiento: El sistema debe proponer una lista de candidatos disponibles.
 Tipo: Funcional.
 Prioridad: Esencial.
-Descripcion:
+Descripcion: El sistema debera recibir la peticion de pedido y retornar una lista con los candidatos disponibles para realizar el envio.
 
 Reqerimiento: Permitir eleccion de mensajero
-Tipo:
-Prioridad:
-Descripcion:
+Tipo: Funcional 
+Prioridad: Esencial
+Descripcion: El usuario debera poder seleccionar de la lista de candidatos retornado por el sistema, el mensajero que realizara el envio. 
 
 Reqerimiento: 
 Tipo:
