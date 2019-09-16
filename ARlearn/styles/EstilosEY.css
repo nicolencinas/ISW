@@ -424,13 +424,14 @@ opacity: 0;
     flex-wrap: wrap;
     right: 0;
     top: 30px;
-    width: 180px;
+    width: 0;
     height: 1200px;
     background-color: rgba(0, 0, 0, 0.6);
-    transform: translate(100%);
     transition: 0.5s all ease-in-out;
     opacity: 0;
-    border-radius: 30px 30px 0 0 ;
+    border-radius: 30px 0px 0 0 ;
+    overflow: hidden;
+   
   }
 
 
@@ -527,14 +528,28 @@ opacity: 0;
     display: flex;
     position: relative;
     top: 0;
-    background-color: rgb(247, 64, 64);
+    background-color: rgb(240, 21, 21);
     color: black;
-    width: 100%;
+    width: 180px;
     height: 30px;
     text-align: center;
     justify-content: center;
     align-items: center;
-    border-radius: 30px 30px 0 0;
-
+    border-radius: 30px 0 0 0;
+    transition: all 0.5s ease-in-out;
+    color: white;
+    font-size: 1.5em;   
     
+}
+
+.close:hover
+{
+
+    background-color: rgb(236, 41, 41);
+
+}
+
+#ghost{
+    transition: all 2s ease-in-out;
+    opacity: 0;
 }

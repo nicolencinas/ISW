@@ -5,12 +5,14 @@ var functional=document.getElementById("functional");
 var hamburger=document.getElementById("hamburger");
 var menulateral=document.getElementById("menulateral");
 var fondo=document.getElementById("fondo");
-
+var ul=document.getElementById("ghost");
 
 fondo.addEventListener('click', function(e)
 {
-  menulateral.style.transform="translate(200%)";
-  hamburger.style.transform="translate(0)";
+  menulateral.style.width="0";
+  hamburger.style.width="50px";
+  ul.style.transition="all 0.2s ease-in-out";
+  ul.style.opacity="0";
                             
   
 });
@@ -68,18 +70,22 @@ fondo.addEventListener('click', function(e)
 
   function mostrarMenu()
 {
-  menulateral.style.transform="translate(0)";
-  hamburger.style.transform="translate(200%)";
+  menulateral.style.width="180px";
+  hamburger.style.width="0";
+  ul.style.transition="all 2s ease-in-out";
+  ul.style.opacity="1";
+  
+  
   
   
 }
 
 function closeMenu()
 {
-  menulateral.style.transform="translate(200%)";
-  hamburger.style.transform="translate(0)";
+  menulateral.style.width="0";
+  hamburger.style.width="50px";
+  ul.style.transition="all 0.2s ease-in-out";
+  ul.style.opacity="0";
 }
 
 
-
-  
