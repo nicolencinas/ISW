@@ -25,6 +25,125 @@ Reqerimiento:
 Tipo:
 Prioridad:
 Descripcion:
+
+___________Parrafo 6_________________
+
+Requerimiento:RFE
+
+Tipo:Funcional
+
+Prioridad:Esencial
+
+Descripcion:El sistema debera interactuar con el GPS para consultar posicion
+actual
+
+Detalle: Los repartidores contaran con un dispositivo movil que tendra un 
+sensor GPS con el cual el sistema interactuara para consultar la posicion actual de cada mensajero
+
+********************************************************************************
+Requerimiento:RFE
+
+Tipo:Funional
+
+Prioridad:Esencial
+
+Descripcion:El sistema debe calcular el tiempo de espera
+
+Detalle: En base a las coordenadas obtenidas de los GPS de cada mensajero, el 
+sistema debera calcular un tiempo de espera en base a la posicion actual
+
+********************************************************************************
+Requerimiento:RFE
+
+Tipo:Funcional
+
+Prioridad:Esenial
+
+Descripcion:El sistema debe interactuar con un sistema de informacion geografica 
+
+Detalle: para poder ubicar las coordenadas obtenidas del GPS, el sistema 
+obtendra un mapa producto de la interaccion con el sistema de informacion 
+geografica para poder marcar las posiciones de los mensajeros
+
+********************************************************************************
+___________Parrafo 7_________________
+
+Requerimiento:RFE
+
+Tipo: Funcional
+
+Prioridad: Esencial
+
+Descripcion:El cliente debe poder cancelar una solictud
+
+Detalle: En el momento que lo requiera el cliente podra cancelar una solicitud 
+de pedido  enviandose asi una notificacion al repartidor asignado
+
+********************************************************************************
+Requerimiento: RFE
+
+Tipo:Funcional
+
+Prioridad:Esencial
+
+Descripcion:El mensjero debe poder cancelar una solicitud de pedido
+
+Detalle: En caso que necesite, el mensajero podra cancelar una solicitud, para 
+ello debera ingresar el motivo 
+
+********************************************************************************
+Requerimiento: RFE
+ 
+Tipo: Funcional
+
+Prioridad:Esencial
+
+Descripcion:El sistema debe ofrecer una nueva lista de candidatos mas cercanos 
+
+Detalle: En caso que la solicitud de pedido sea cancelada por el mensajero, el sistema procedera a ofrecer una nueva lista de candidatos mas cercanos para cumplimentar con el pedido
+
+********************************************************************************
+___________Parrafo 8_________________
+
+Requerimiento: RFE
+
+Tipo: Funcional
+
+Prioridad: Esencial
+
+Descripcion: El mensajero debe  informar al sistema el inicio y fin de la entrega pactada
+
+Detalle: una vez elegido el mensajero, este tiene que informar el inicio del procso de entrega y posteriormente el fin de la misma
+
+********************************************************************************
+Requerimiento: RFI
+
+Tipo: Funcional
+
+Prioridad: Importante
+
+Descripcion:El sistema enviara un pedido de califiacion del mensajero y del nivel del sevicio en general
+
+Detalle:Al concluir la entrega, el sistema enviara al cliente un pedido de califiacion del mensajero y servicio en general. Esta informacion sera utilizada como referencia para futuras solicitudes
+
+********************************************************************************
+Requerimiento: RFE
+
+Tipo: Funcional
+
+Prioridad: Esencial
+
+Descripcion:Los repartidores podran informar su disponibilidad
+
+Detalle: los repartidores mediante su dispositivo movil podran informar al 
+sistema si estan disponibles o no para ser candidatos para realizar entregas
+
+********************************************************************************
+
+
+
+
+
 ___________Parrafo 12_________________
 Requerimiento:
 Tipo: Funcional
