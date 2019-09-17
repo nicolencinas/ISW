@@ -25,7 +25,33 @@ Reqerimiento:
 Tipo:
 Prioridad:
 Descripcion:
+___________Parrafo 12_________________
+Requerimiento:
+Tipo: Funcional
+Prioridad: Importante
+Descripción: El operador visualizara las entregas de todos los clientes para poder responder consultas sobre el estado de las mismas.
+Detalle: El operador trabajará localmente con el sistema, con esto se asegura que siempre podrá acceder a la información necesaria y responder consultas sobre el estado de las entregas de todos los clientes.
+
+Requerimiento:
+Tipo: Funcional
+Prioridad: Importante
+Descripción: El operador recibirá notificaciones de perdidas de conexión
+Detalle: En el caso de detectarse la pérdida de conexión con el dispositivo móvil de un mensajero asignado a una entrega en curso, el sistema notificará al operador. 
+___________Parrafo 13_________________
+
+Requerimiento:
+Tipo: Funcional
+Prioridad: Esencial
+Descripción: El sistema deberá normalizar las direcciones  para evitar inconvenientes con el destino de entrega.
+Detalle: El sistema deberá normalizar las direcciones para evitar inconvenientes con el destino de entrega, para esto deberá interactuar con algún servicio externo que permita la dicha normalización.
+
+___________Parrafo 14_________________
 
 
+Requerimiento:
+Tipo: Funcional
+Prioridad: Deseable
+Descripción: Los mensajeros podrán ingresar las incidencias del trafico.
+Detalle: Los mensajeros podrán ingresar las incidencias en el tráfico, para permitir al sistema calcular en forma más precisa los tiempos de arribo, a partir de las estadísticas propias. Adicionalmente el sistema interactuara con mas de un servicio  externo para obtener las alertas de tránsito,siempre suponiendo que algunos de ellos estará disponible para brindarnos la información.
 
 
