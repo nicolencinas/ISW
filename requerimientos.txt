@@ -167,4 +167,29 @@ Prioridad: Deseable
 Descripción: Los mensajeros podrán ingresar las incidencias del trafico.
 Detalle: Los mensajeros podrán ingresar las incidencias en el tráfico, para permitir al sistema calcular en forma más precisa los tiempos de arribo, a partir de las estadísticas propias. Adicionalmente el sistema interactuara con mas de un servicio  externo para obtener las alertas de tránsito,siempre suponiendo que algunos de ellos estará disponible para brindarnos la información.
 
+-----------------------
+
+Parrafo del 9 al 11
+
+
+Requerimiento:	El cliente podrá planificar las entregas
+Tipo:	Funcional	Prioridad:	Importante
+Descripción:	
+Detalle:	Los clientes podrán planificar entregas programas, podrán ingresar el día y horario requerido para la entrega.
+
+Requerimiento:	El sistema deberá enviar avisos al mensajero
+Tipo:	Funcional	Prioridad:	Importante
+Descripción:	
+Detalle:	El sistema enviara un mensaje de aviso al mensajero designado por una entrega pactada para su confirmación.
+
+Requerimiento:	Los directivos podrán hacer consultas de las estadísticas
+Tipo:	Funcional	Prioridad:	Esencial
+Descripción:	
+Detalle:	Los directivos podrán consultar información estadística del uso del sistema, junto con las calificaciones de los mensajeros y la información del nivel de servicio.
+
+Requerimiento:	El operador podrá ingresar solicitudes de pedidos
+Tipo:	Funcional	Prioridad:	Esencial
+Descripción:	
+Detalle:	Además de los clientes, un operador de la empresa podrá ingresar solicitudes de pedido en preferencia del comerciante y será el encargado de mantener actualizado el registro del cliente.
+
 
