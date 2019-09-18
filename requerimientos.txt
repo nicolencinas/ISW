@@ -1,59 +1,57 @@
 
 ___________Parrafo 2_________________
-Requerimiento: Generar una solicitud de pedido.
+
+
 Tipo: Funcional.
 Prioridad: Esencial.
-Descripcion: El comerciante registrado debera poder ingresar una solicitud de pedido de envio. Se debera especificar la informacion del paquete con: origen, destino, peso volumétrico, tipo e informacion adicional.
+Descripcion: El cliente registrado debera poder ingresar una solicitud de pedido de envio. 
+Detalle: Se debera especificar la informacion del paquete con: origen, destino, peso volumétrico, tipo e informacion adicional.
 
-Requerimiento: Presentar una lista de candidatos disponibles.
+
 Tipo: Funcional.
 Prioridad: Esencial.
-Descripcion: El sistema debera recibir la peticion de pedido y retornar una lista con los candidatos disponibles para realizar el envio.
+Descripcion: El sistema debera retornar la lista de posibles candidatos para seleccionar. 
+Detalle: El sistema retornara una lista con los candidatos disponibles de los cuales el cliente podra seleccionar para realizar el envio.
 
-Requerimiento: Posibilitar la eleccion de mensajero
-Tipo: Funcional 
-Prioridad: Esencial
-Descripcion: El sistema debera dar una lista de candidatos para que el cliente seleccione el mensajero que realizara el envio. 
 
-Requerimiento: Enviar notificacion para realizar entrega.
-Tipo: Funcional	
-Prioridad: Escencial 
-Descripcion: El repartidor recibira una notificacion con la informacion del pedido para poder realizar el envio.
 
-Requerimiento: Registrar cliente.
 Tipo: Funcional.
 Prioridad: Escencial.
-Descripcion: El sistema debe permitir el registro de un nuevo cliente, mediante el número de teléfono y empresa.
+Descripcion: El sistema enviara la notificacion para realizar la entrega.
+Detalle: El sistema debera registrar la confirmación de solicitud y enviar la notificación al mensajero con la informacion del pedido.
+
+
+
+Tipo: Funcional.
+Prioridad: Escencial.
+Descripcion: El sistema debe permitir el registro de un nuevo cliente:
+Detalle:El cliente podra registrarse al sitio mediante el número de teléfono y empresa.
 
 Requerimiento: Diseño responsive de la pagina.
-Tipo: No funcional 
-Prioridad: importante
-Descripcion: La página web de entregas ya debe posser una interfaz responsive para poder visualizarde en cualquier dispositivo.
+Tipo: No funcional.
+Prioridad: Importante.
+Detalle: El sistema de una página web y debe posser una interfaz responsive para poder visualizarse en cualquier dispositivo.
 
 ___________Parrafo 4_________________
 
 Requerimiento: Personalizar las preferencias de busqueda.
-Tipo: Funcional
-Prioridad: Importante 
-Descripcion: El cliente podra personalizar las parámetros para la busqueda de candidatos (vehículo del repartidor, calificacion, distancia respecto al cliente,
-Cantidad de viajes).
+Tipo: No funcional.
+Prioridad: Importante. 
+Detalle: El cliente podra personalizar las parámetros para la busqueda de candidatos (vehículo del repartidor, calificacion, distancia respecto al cliente,cantidad de viajes,etc).
 
 ___________Parrafo 5_________________
 
-Requerimiento: Coordinar entrega.
-Tipo: Funcional.
-Prioridad: Importante.
-Descripcion: El sistema debera registrar la confirmación de solicitud y enviar la notificación al mensajero.
 
-Requerimiento: Analizar ubicacion y tiempos de entrega.
-Tipo: Funcional.
+
+Requerimiento: Verificar tiempos de entrega.
+Tipo: No funcional.
 Prioridad: Importante.
-Descripcion: El sistema debera calcular el tiempo de espera mediante la ubicacion aproximada del repartidor.
+Detalle: El sistema debera calcular el tiempo de espera mediante la ubicacion aproximada del repartidor.
 
 Requerimiento: Utilizar servicio de mapas.
 Tipo: Funcional.
 Prioridad: Importante.
-Descripcion: El sistema debera integrar un mapa donde se podra ver la ubicación actual aproximada del mensajero.
+Detalle: El sistema debera integrar un mapa donde se podra ver la ubicación actual aproximada del mensajero.
 
 
 
