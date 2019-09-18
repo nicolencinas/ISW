@@ -5,7 +5,6 @@ Tipo: Funcional.
 Prioridad: Esencial.
 Descripcion: El comerciante debera poder ingresar una solicitud de pedido de envio.
 
-
 Reqerimiento: El sistema debe proponer una lista de candidatos disponibles.
 Tipo: Funcional.
 Prioridad: Esencial.
@@ -139,11 +138,6 @@ Detalle: los repartidores mediante su dispositivo movil podran informar al
 sistema si estan disponibles o no para ser candidatos para realizar entregas
 
 ********************************************************************************
-
-
-
-
-
 ___________Parrafo 12_________________
 Requerimiento:
 Tipo: Funcional
