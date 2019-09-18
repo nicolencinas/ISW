@@ -1,28 +1,28 @@
 
 ___________Parrafo 2_________________
-Requerimiento: El comerciante podra ingresar una solicitud de pedido.
+Requerimiento: Generar una solicitud de pedido.
 Tipo: Funcional.
 Prioridad: Esencial.
-Descripcion: El comerciante registrado debera poder ingresar una solicitud de pedido de envio. Debe especificar la informacion del paquete: origen, destino, peso volumétrico, tipo e info adicional.
+Descripcion: El comerciante registrado debera poder ingresar una solicitud de pedido de envio. Se debera especificar la informacion del paquete con: origen, destino, peso volumétrico, tipo e informacion adicional.
 
-Requerimiento: El sistema debe proponer una lista de candidatos disponibles.
+Requerimiento: Presentar una lista de candidatos disponibles.
 Tipo: Funcional.
 Prioridad: Esencial.
 Descripcion: El sistema debera recibir la peticion de pedido y retornar una lista con los candidatos disponibles para realizar el envio.
 
-Requerimiento: Permitir eleccion de mensajero
+Requerimiento: Posibilitar la eleccion de mensajero
 Tipo: Funcional 
 Prioridad: Esencial
-Descripcion: El usuario debera poder seleccionar de la lista de candidatos retornado por el sistema, el mensajero que realizara el envio. 
+Descripcion: El sistema debera dar una lista de candidatos para que el cliente seleccione el mensajero que realizara el envio. 
 
-Requerimiento: Enviar notificacion para realizar entrega
+Requerimiento: Enviar notificacion para realizar entrega.
 Tipo: Funcional	
 Prioridad: Escencial 
-Descripcion: El repartidor recibira una notificacion del pedido para poder realizar el envio.
+Descripcion: El repartidor recibira una notificacion con la informacion del pedido para poder realizar el envio.
 
-Requerimiento: Registrar cliente
-Tipo: Funcional 
-Prioridad: Escencial
+Requerimiento: Registrar cliente.
+Tipo: Funcional.
+Prioridad: Escencial.
 Descripcion: El sistema debe permitir el registro de un nuevo cliente, mediante el número de teléfono y empresa.
 
 Requerimiento: Diseño responsive de la pagina.
