@@ -52,6 +52,24 @@
       
 
     }
+
+    .logo{
+      display: block;
+      transform: translate(55%);
+      position: relative;
+      width: 40%;
+    padding: 1.5em;
+    margin: auto;
+
+    }
+
+    img:nth-child(2n), img:nth-child(3n){
+      transform: scale(2.5);
+    }
+
+    .papel{
+      width: 80%;
+    }
   }
   @media screen and (max-width: 607px)
   {
@@ -76,15 +94,48 @@
     ul li{
       margin-left: 50px;
     }
-   
 
-    
-  
+    .logo{
+      display: block;
+      transform: translate(20%);
+      position: relative;
+      width: 60%;
+    padding: 1.5em;
+    margin: auto;
 
-    
+    }
 
+    img:nth-child(2n), img:nth-child(3n){
+      transform: scale(2.5);
+    }
 
+    .papel{
+      width: 80%;
+    }
   }
+
+  @media screen and (max-width: 360px)
+  {
+    .logo{
+      display: block;
+      transform: translate(20%);
+      position: relative;
+      width: 60%;
+    padding: 1.5em;
+    margin: auto;
+
+    }
+
+    img:nth-child(2n), img:nth-child(3n){
+      transform: scale(2.5);
+    }
+
+    .papel{
+      width: 80%;
+    }
+  }
+
+
 </style>
 </head>
 <a href="home.html">
@@ -99,11 +150,11 @@
  
  
   <ul id="sticky">
+    <a href="home.html"><li>Pagina Principal</li> </a>
     <a href="who.html"> <li>Nosotros  </li></a>
-    <li>Soluciones</li>
-    <a href="services.html"><li>Servicios Profesionales</li></a>
-    <a href="clients.html"> <li>Clientes</li></a>
-    <a href="contact.html"><li>Contacto</li></a>
+   <a href="services.html"><li>Servicios Profesionales</li></a>
+   <a href="clients.html"> <li>Clientes</li></a>
+   <a href="contact.html"><li>Contacto</li></a>
   </ul>
 
 </div>
@@ -115,7 +166,7 @@
 
     <div class="contenedor2">
       <div style="display:block; justify-content: center; align-items: center;">
-        <h1 style="font-size: 1.5em"> En ARlearn nos gustan las cosas bien hechas por eso el diseño es parte de nuestro perfil profesional. <br> Conozcan nuestro departamento de diseño: </h1>
+        <h1 style="font-size: 1.5em; padding: 0.5em"> En ARlearn nos gustan las cosas bien hechas por eso el diseño es parte de nuestro perfil profesional. <br> Conozcan nuestro departamento de diseño: </h1>
       </div>
     <br><br>
       <img class="video" src="images/Design-ONCE.gif" alt="">
@@ -127,7 +178,7 @@
   </div>
 
   <div class="contenedor2">
-    <div style="display:block; justify-content: left; align-items: center; width: 40%; margin: auto; text-align: left; box-shadow: -9px 20px 12px 0 rgba(177, 169, 169, 0.05), 9px 20px 12px 0 rgba(177, 169, 169, 0.05); padding: 1em 2em; background-color: rgba(255, 255, 255, 0.521);border-radius: 2m">
+    <div class="papel">
       <p style="font-size: 1.2em; "> ARlearn nació de la necesidad de obtener identidad como equipo. Demostrar solídez. Aún somos estudiantes con mucho que aprender pero nos sentimos lo suficientemete profesionales respecto a manera de trabajar, enorgullenciendonos por cada logro y buena calificación.  </p>
 
       <p style="font-size: 1.2em"> En cada trabajo intentamos explotar todo nuestro potencial y presentarnos nuestro perfil en todos los ambitos del desarrollo de software.</p>
@@ -169,7 +220,7 @@
 
    
 
-  <script src="funcionalidad.js"></script>
+  <script src="js/funcionalidadAR.js"></script>
 
 
 </body>

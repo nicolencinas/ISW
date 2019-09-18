@@ -11,130 +11,11 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <script src="funcionalidad.js"></script>
-
-<style>
- 
 
 
-
- @media screen and (min-width: 1301px)
- {
-   
-
- }
-  @media screen and (max-width: 1300px)
-  {
-
-   
-    ul{
-     
-   display: none;
-    }
-   .cabecera{
-     display: none;
-   }
-
-   .hamburger{
-    opacity: 1;
-    
-    
-   }
-
-   .hamburger::before{
-    width: 100%;
-   }
-
-   .hamburger::after{
-    width: 100%;
-   }
-
-
-   .contenedor{
-     margin-top: 150px;
-   }
-
-   .menulateral{
-     opacity: 1;
-   }
-
-  
-
-
-    
-
-  }
-  @media screen and (max-width: 607px)
-  {
-
-
-    .boton,.boton2{
-      display: block;
-      justify-content: center;
-      margin: auto;
-      margin-bottom: 30px;
-    }
-
-    ul li{
-      margin-left: 50px;
-    }
-
-    .contenedor{
-     margin-top: 150px;
-     width: 100%;
-    }
-
-    .contenedor p{
-      font-size: 0.7em;
-    }
-
-   .logo{
-     padding: 3em;
-     width: 7em;
-   }
-
-  }
-   
-   @media screen and (max-width: 601px)
-  {
-
-    .logo{
-      width: 7em;
-      padding: 1.5em;
-     
-    }
-
-  }
-
-  @media screen and (max-width: 320px )
-  {
-
-    .logo{
-      width: 7em;
-      padding: 1.5em;
-     
-    }
-
-  }
-
-  @media screen and (max-width: 360px )
-  {
-
-    .logo{
-      width: 7em;
-      padding: 1.5em;
-     
-    }
-
-  }
-
-  
-
- 
-</style>
 </head>
 <div class="logo" id="logo">
-  <img src="images/entregas.gif" alt="">
+  <img src="images/Entregas.gif" alt="">
     </div>
 <header>
    
@@ -144,8 +25,8 @@
  
  
   <ul id="sticky">
+    <a href="home.html"><li>Pagina Principal</li> </a>
     <a href="who.html"> <li>Nosotros  </li></a>
-    <li>Soluciones</li>
     <a href="services.html"><li>Servicios Profesionales</li></a>
     <a href="clients.html"> <li>Clientes</li></a>
     <a href="contact.html"><li>Contacto</li></a>
@@ -160,12 +41,17 @@
   <div class="fondo2" id="fondo">
 
     <div class="contenedor">
-      <p class="welcome" >Bienvenidos a Entregas YA</p>
+      <p class="welcome" >Bienvenidos a Entregas<span class=" red" >YA</span></p> 
   </div>
 
-  <div class="contenedor">
+  <div class="contenedor column">
 
+    <input type="text" class="direction" placeholder="Ingrese calle">
+    <input type="text" class="direction" placeholder="Ingrese ciudad">
+    <input type="button" class="direction" value="Buscar en el mapa">
   </div>
+
+  
 
   
     
@@ -186,8 +72,8 @@
     </div>
  
               <ul id="ghost">
-                <a href="who.html"> <li>Nosotros  </li></a>
-                <li>Soluciones</li>
+                <a href="home.html"><li>Pagina Principal</li> </a>
+                <a href="who.html"> <li>Nosotros </li></a>
                 <a href="services.html"><li>Servicios</li></a>
                 <a href="clients.html"> <li>Clientes</li></a>
                 <a href="contact.html"><li>Contacto</li></a>
@@ -198,7 +84,7 @@
 
  
 
-<script src="js/funcionalidad.js">
+<script  src="js/funcionalidad.js">
 
 
 </script>

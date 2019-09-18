@@ -120,7 +120,7 @@ li:hover{
     width: 100%;
    
     background-color: blue;
-    background-image: url(images/font.svg);
+    background-image: url(../images/font.svg);
     background-size: cover;
     border-radius: 0 0 12px 12px;
 
@@ -415,4 +415,14 @@ opacity: 0;
   }
 
   
-  
+  .texto
+{
+    display:block; justify-content: left; align-items: center; width: 40%; margin: auto; text-align: left; box-shadow: -9px 20px 12px 0 rgba(177, 169, 169, 0.05), 9px 20px 12px 0 rgba(177, 169, 169, 0.05); padding: 1em 2em; background-color: rgba(255, 255, 255, 0.521);border-radius: 2m
+}
+
+
+.papel{
+    display:block; justify-content: left; align-items: center; width: 40%; margin: auto; text-align: left; box-shadow: -9px 20px 12px 0 rgba(177, 169, 169, 0.05), 9px 20px 12px 0 rgba(177, 169, 169, 0.05); padding: 1em 2em; background-color: rgba(255, 255, 255, 0.521);border-radius: 2m;
+}
+
+
