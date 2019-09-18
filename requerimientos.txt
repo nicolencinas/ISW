@@ -2,32 +2,33 @@
 ___________Parrafo 2_________________
 
 
+1)
 Tipo: Funcional.
 Prioridad: Esencial.
 Descripcion: El cliente registrado debera poder ingresar una solicitud de pedido de envio. 
 Detalle: Se debera especificar la informacion del paquete con: origen, destino, peso volumétrico, tipo e informacion adicional.
 
-
+2)
 Tipo: Funcional.
 Prioridad: Esencial.
 Descripcion: El sistema debera retornar la lista de posibles candidatos para seleccionar. 
 Detalle: El sistema retornara una lista con los candidatos disponibles de los cuales el cliente podra seleccionar para realizar el envio.
 
 
-
+3)
 Tipo: Funcional.
 Prioridad: Escencial.
 Descripcion: El sistema enviara la notificacion para realizar la entrega.
 Detalle: El sistema debera registrar la confirmación de solicitud y enviar la notificación al mensajero con la informacion del pedido.
 
 
-
+4)
 Tipo: Funcional.
 Prioridad: Escencial.
 Descripcion: El sistema debe permitir el registro de un nuevo cliente:
 Detalle:El cliente podra registrarse al sitio mediante el número de teléfono y empresa.
 
-
+5)
 Tipo: No funcional.
 Prioridad: Importante.
 Descripcion: El sistema debe ser portable en todos los dispositivos
@@ -35,7 +36,7 @@ Detalle: La pagina web del sistema  debe posser una interfaz responsive para pod
 
 ___________Parrafo 4_________________
 
-
+6)
 Tipo: No funcional.
 Prioridad: Importante. 
 Descripcion: El cliente podra personalizar las parámetros para la busqueda de candidatos
@@ -45,13 +46,13 @@ Detalle: El sistama debe permitir la modificacion de parametros de busqueda tale
 ___________Parrafo 5_________________
 
 
-
+7)
 Tipo: No funcional.
 Prioridad: Importante.
 Descripcion: El sistema debera calcular el tiempo de espera aproximada.
 Detalle: El sistema debera utilizar un servicio GPS y en base a las coordenadas obtenidas de los GPS de cada mensajero, debera calcular un tiempo de espera en base a la posicion actual.
 
-
+8)
 Tipo: Funcional.
 Prioridad: Importante.
 Descripcion: El sistema debe mostrar la ubicacion actual aproximada del mensajero 
@@ -60,22 +61,19 @@ Detalle: El sistema debera mostrar la ubicacion actual aproximada en un mapa. Pa
 
 ___________Parrafo 6_________________
 
-
+9)
 Requerimiento:RFE
-
 Tipo:Funcional
-
 Prioridad:Esenial
-
 Descripcion:El sistema debe interactuar con un sistema de informacion geografica 
-
 Detalle: para poder ubicar las coordenadas obtenidas del GPS, el sistema 
 obtendra un mapa producto de la interaccion con el sistema de informacion 
 geografica para poder marcar las posiciones de los mensajeros
 
-********************************************************************************
+
 ___________Parrafo 7_________________
 
+10)
 Requerimiento:RFE
 
 Tipo: Funcional
@@ -87,7 +85,8 @@ Descripcion:El cliente debera poder cancelar una solictud.
 Detalle: En el momento que lo requiera el cliente podra cancelar una solicitud 
 de pedido  enviandose asi una notificacion al repartidor asignado
 
-********************************************************************************
+
+11)
 Requerimiento: RFE
 
 Tipo:Funcional
@@ -99,31 +98,34 @@ Descripcion:El mensjero debe poder cancelar una solicitud de pedido.
 Detalle: En caso que necesite, el mensajero podra cancelar una solicitud, para ello debera ingresar el motivo. En caso que la solicitud de pedido sea cancelada por el mensajero, el sistema procedera a ofrecer una nueva lista de candidatos mas cercanos para cumplimentar con el pedido
 
 
-********************************************************************************
+
 ___________Parrafo 8_________________
 
+12)
 Requerimiento: RFE
 
 Tipo: Funcional
 
 Prioridad: Esencial
 
-Descripcion: El mensajero debe  informar al sistema el inicio y fin de la entrega pactada
+Descripcion: El mensajero debe informar al sistema el inicio y fin de la entrega pactada.
 
-Detalle: una vez elegido el mensajero, este tiene que informar el inicio del proceso de entrega y posteriormente el fin de la misma
+Detalle: Una vez elegido el mensajero, este tiene que informar el inicio del proceso de entrega y posteriormente el fin de la misma y el sistema debera informarlo.
 
-********************************************************************************
+
+13)
 Requerimiento: RFI
 
 Tipo: Funcional
 
 Prioridad: Importante
 
-Descripcion:El sistema enviara un pedido de califiacion del mensajero y del nivel del sevicio en general
+Descripcion:El sistema enviara un pedido de califiacion del mensajero y del nivel del sevicio en general.
 
 Detalle:Al concluir la entrega, el sistema enviara al cliente un pedido de califiacion del mensajero y servicio en general. Esta informacion sera utilizada como referencia para futuras solicitudes
 
-********************************************************************************
+14)
+
 Requerimiento: RFE
 
 Tipo: Funcional
@@ -133,24 +135,26 @@ Prioridad: Esencial
 Descripcion:Los repartidores podran informar su disponibilidad
 
 Detalle: los repartidores mediante su dispositivo movil podran informar al 
-sistema si estan disponibles o no para ser candidatos para realizar entregas
+sistema si estan disponibles o no para ser candidatos para realizar entregas.
 
-********************************************************************************
+
 ___________Parrafo 12_________________
-Requerimiento:
+15)
+
 Tipo: Funcional
 Prioridad: Importante
 Descripción: El operador visualizara las entregas de todos los clientes para poder responder consultas sobre el estado de las mismas.
 Detalle: El operador trabajará localmente con el sistema, con esto se asegura que siempre podrá acceder a la información necesaria y responder consultas sobre el estado de las entregas de todos los clientes.
 
-Requerimiento:
+16)
 Tipo: Funcional
 Prioridad: Importante
 Descripción: El operador recibirá notificaciones de perdidas de conexión
 Detalle: En el caso de detectarse la pérdida de conexión con el dispositivo móvil de un mensajero asignado a una entrega en curso, el sistema notificará al operador. 
-___________Parrafo 13_________________
 
-Requerimiento:
+___________Parrafo 13_________________
+17)
+
 Tipo: Funcional
 Prioridad: Esencial
 Descripción: El sistema deberá normalizar las direcciones  para evitar inconvenientes con el destino de entrega.
@@ -158,8 +162,8 @@ Detalle: El sistema deberá normalizar las direcciones para evitar inconveniente
 
 ___________Parrafo 14_________________
 
+18)
 
-Requerimiento:
 Tipo: Funcional
 Prioridad: Deseable
 Descripción: Los mensajeros podrán ingresar las incidencias del trafico.
