@@ -5,8 +5,8 @@ ___________Parrafo 2_________________
 1)
 Tipo: Funcional.
 Prioridad: Esencial.
-Descripcion: El cliente registrado debera poder ingresar una solicitud de pedido de envio. 
-Detalle: Se debera especificar la informacion del paquete con: origen, destino, peso volumétrico, tipo e informacion adicional.
+Descripcion: El cliente registrado podra ingresar una solicitud de pedido de envio.
+Detalle: La solicitud de pedido, debera contener la informacion del paquete: origen, destino, peso volumétrico, tipo e informacion adicional.
 
 2)
 Tipo: Funcional.
