@@ -6,75 +6,60 @@ ___________Parrafo 2_________________
 Tipo: Funcional.
 Prioridad: Esencial.
 Descripcion: El cliente registrado podra ingresar una solicitud de pedido de envio.
-Detalle: La solicitud de pedido, debera contener la informacion del paquete: origen, destino, peso volumétrico, tipo e informacion adicional.
+Detalle: El cliente debe especificar la informacion del paquete: origen, destino, peso volumétrico, tipo e informacion adicional. Ademas, el sistema debera presentar la lista de posibles candidatos para realizar el envio. 
+
 
 2)
-Tipo: Funcional.
-Prioridad: Esencial.
-Descripcion: El sistema debera retornar la lista de posibles candidatos para seleccionar. 
-Detalle: El sistema retornara una lista con los candidatos disponibles de los cuales el cliente podra seleccionar para realizar el envio.
-
-
-3)
 Tipo: Funcional.
 Prioridad: Escencial.
 Descripcion: El sistema enviara la notificacion para realizar la entrega.
 Detalle: El sistema debera registrar la confirmación de solicitud y enviar la notificación al mensajero con la informacion del pedido.
 
 
-4)
+3)
 Tipo: Funcional.
 Prioridad: Escencial.
-Descripcion: El sistema debe permitir el registro de un nuevo cliente:
+Descripcion: El sistema debe permitir el registro de un nuevo cliente.
 Detalle:El cliente podra registrarse al sitio mediante el número de teléfono y empresa.
 
-5)
+4)
 Tipo: No funcional.
 Prioridad: Importante.
-Descripcion: El sistema debe ser portable en todos los dispositivos
-Detalle: La pagina web del sistema  debe posser una interfaz responsive para poder visualizarse en cualquier dispositivo.
+Descripcion: La interfaz grafica del sistema tiene que ser adaptable a todos los dispositivos.
+Detalle: La pagina web del sistema debe poseer una interfaz responsive para poder visualizarse en cualquier dispositivo (movil o pc).
 
 ___________Parrafo 4_________________
 
-6)
+5)
 Tipo: No funcional.
 Prioridad: Importante. 
-Descripcion: El cliente podra personalizar las parámetros para la busqueda de candidatos
-
-Detalle: El sistama debe permitir la modificacion de parametros de busqueda tales como: vehículo del repartidor, calificacion, distancia respecto al cliente,cantidad de viajes, etc.
+Descripcion: El cliente podra personalizar las preferencias para la busqueda de candidatos.
+Detalle: El sistema debe permitir la eleccion de distintos criterios de busqueda. Estos filtros podran ser: vehículo del repartidor, calificacion, distancia del mensajero respecto al cliente,cantidad de viajes, etc.
 
 ___________Parrafo 5_________________
 
 
-7)
+6)
 Tipo: No funcional.
 Prioridad: Importante.
 Descripcion: El sistema debera calcular el tiempo de espera aproximada.
-Detalle: El sistema debera utilizar un servicio GPS y en base a las coordenadas obtenidas de los GPS de cada mensajero, debera calcular un tiempo de espera en base a la posicion actual.
-
-8)
-Tipo: Funcional.
-Prioridad: Importante.
-Descripcion: El sistema debe mostrar la ubicacion actual aproximada del mensajero 
-Detalle: El sistema debera mostrar la ubicacion actual aproximada en un mapa. Para ello, los mensajeros. contaran con un dispositivo movil que tendra un sensor GPS para consultar la posicion actual de cada uno.
+Detalle: El sistema debera utilizar un servicio de posicionamiento. En base a las coordenadas obtenidas de los GPS de cada mensajero, el sistema debera calcular un tiempo de espera en base a la posicion actual.
 
 
 ___________Parrafo 6_________________
 
-9)
-Requerimiento:RFE
+7)
+
 Tipo:Funcional
-Prioridad:Esenial
-Descripcion:El sistema debe interactuar con un sistema de informacion geografica 
-Detalle: para poder ubicar las coordenadas obtenidas del GPS, el sistema 
-obtendra un mapa producto de la interaccion con el sistema de informacion 
-geografica para poder marcar las posiciones de los mensajeros
+Prioridad:Esencial
+Descripcion:El sistema debe interactuar con un sistema de informacion geografica.
+Detalle: para poder ubicar las coordenadas obtenidas del GPS, el sistema utilizara un servicio de informacion geografica externo para poder marcar las posiciones de los mensajeros.
 
 
 ___________Parrafo 7_________________
 
-10)
-Requerimiento:RFE
+8)
+
 
 Tipo: Funcional
 
@@ -83,38 +68,39 @@ Prioridad: Esencial
 Descripcion:El cliente debera poder cancelar una solictud.
 
 Detalle: En el momento que lo requiera el cliente podra cancelar una solicitud 
-de pedido  enviandose asi una notificacion al repartidor asignado
+de pedido vigente. Ademas el sietasma debera enviar una notificacion de cancelacion al repartidor asignado.
 
 
-11)
-Requerimiento: RFE
+9)
+
 
 Tipo:Funcional
 
 Prioridad:Esencial
 
-Descripcion:El mensjero debe poder cancelar una solicitud de pedido.
+Descripcion:El mensajero debe poder cancelar una solicitud de pedido.
 
-Detalle: En caso que necesite, el mensajero podra cancelar una solicitud, para ello debera ingresar el motivo. En caso que la solicitud de pedido sea cancelada por el mensajero, el sistema procedera a ofrecer una nueva lista de candidatos mas cercanos para cumplimentar con el pedido
+Detalle: El mensajero podra cancelar una solicitud, para ello debera ingresar el motivo. En este caso en particula5, el sistema debera registrar la cancelacion y presentar una lista nueva con los candidatos mas cercanos para concretar el pedido en curso.
 
 
 
 ___________Parrafo 8_________________
 
-12)
-Requerimiento: RFE
+10)
+
+
 
 Tipo: Funcional
 
 Prioridad: Esencial
 
-Descripcion: El mensajero debe informar al sistema el inicio y fin de la entrega pactada.
+Descripcion: El mensajero debe informar al sistema el inicio y el fin de la entrega pactada.
 
-Detalle: Una vez elegido el mensajero, este tiene que informar el inicio del proceso de entrega y posteriormente el fin de la misma y el sistema debera informarlo.
+Detalle: Una vez elegido el mensajero, este tiene que indicar el inicio del proceso de entrega. Una vez concretado el pedido, el mensajero lo debe informar al sistema y este notificarlo al cliente.
 
 
 13)
-Requerimiento: RFI
+
 
 Tipo: Funcional
 
