@@ -99,7 +99,7 @@ Descripcion: El mensajero debe informar al sistema el inicio y el fin de la entr
 Detalle: Una vez elegido el mensajero, este tiene que indicar el inicio del proceso de entrega. Una vez concretado el pedido, el mensajero lo debe informar al sistema y este notificarlo al cliente.
 
 
-13)
+11)
 
 
 Tipo: Funcional
