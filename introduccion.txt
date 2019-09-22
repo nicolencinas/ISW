@@ -1,3 +1,9 @@
 Introduccion
 
+Descripción general del problema
 
+Frente a un aumento de clientes en, la demanda de pedidos en la empresa se triplicaron. La solicitud de retiro de paquetes por teléfono, la coordinación por radio con los mensajeros y la estimación de tiempo de espera, se volvió menos eficaz.
+
+Objetivo de negocio
+
+Con el avance de la tecnología y el aumento de la demanda en los servicios de entregas de paquetes, la gente recurre más al uso de las aplicaciones y al acceso a la información de manera dinámica. Conscientes de este panorama y ante la potencial pérdida de los clientes, la empresa Entregas YA se ve en la necesidad de mejorar la calidad de su servicio y la rapidez de las entregas.
