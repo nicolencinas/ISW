@@ -1,4 +1,4 @@
-Introduccion
+1.Introduccion
 
 Descripción general del problema
 
@@ -7,3 +7,47 @@ Frente a un aumento de clientes en, la demanda de pedidos en la empresa se tripl
 Objetivo de negocio
 
 Con el avance de la tecnología y el aumento de la demanda en los servicios de entregas de paquetes, la gente recurre más al uso de las aplicaciones y al acceso a la información de manera dinámica. Conscientes de este panorama y ante la potencial pérdida de los clientes, la empresa Entregas YA se ve en la necesidad de mejorar la calidad de su servicio y la rapidez de las entregas.
+
+Objetivos del sistema
+
+
+
+
+
+
+
+
+Objetivos del documento
+
+El objetivo de este documento es introducir al lector en los objetivos, requerimientos e interacciones de la aplicación con los distintos actores, así como el alcance del sistema que se quiere desarrollar. 
+
+
+Alance del sistema
+
+
+
+
+
+
+
+
+
+2. REQUERIMIENTOS
+En primer lugar, se explicarán de forma detallada los requerimientos para que el sistema cumpla con las funcionalidades deseadas. Abreviaturas:
+
+	RFE= requerimiento funcional esencial 	RNF=requerimiento No Funcional 
+	RFI = Requerimiento Funcional Importante
+	RNFI= Requerimiento No Funcional Importante
+	RFD = Requerimiento Funcional Deseable
+	RFND= Requerimiento No Funcional Deseable
+
+	Los requerimientos funcionales expresan la naturaleza del funcionamiento del sistema. Cuando se habla de un requerimiento funcional esencial implica que sin dichos requerimientos no es posible utilizar el sistema. En caso de los requerimientos funcionales importantes son parte del sistema y ayuda a su funcionamiento pero pueden obviarse en el sistema y no compromete el funcionamiento del sistema. por su parte los requerimientos funcionales deseables son aquellos que son prescindibles, esto quiere decir que no perjudica en nada el funcionamiento del sistema. Los requerimientos no funcionales son aquellas resticciones sobre el espacio de posibles soluciones como el rendimiento del sistema, relacionado a interfaces o procesos de desarrollo.
+
+
+
+
+
+
+
+
+
