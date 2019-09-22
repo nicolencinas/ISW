@@ -21,7 +21,6 @@ El objetivo de este documento es introducir al lector en los objetivos, requerim
 Alance del sistema
 
     • Implementar un sitio web para la solicitudes de entregas.
-    • Brindarle a los clientes un logueo y registracion.
     • Permitir a los clientes generar solicitudes y poder seguir el estado de la misma hasta su culminación.
     • Permitir a los clientes planificar solicitudes.
     • Permitir a los repartidores recibir solicitudes, informar inicio y fin, recibir recordatorios de envíos pactados y hacer cancelaciones.
