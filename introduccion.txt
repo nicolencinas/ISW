@@ -10,11 +10,7 @@ Con el avance de la tecnología y el aumento de la demanda en los servicios de e
 
 Objetivos del sistema
 
-
-
-
-
-
+El objetivo del sistema es brindarle una plataforma web a los clientes en la cual puedan realizar solicitudes de entregas y coordinar con repartidores disponibles las mismas. La idea es que el sistema se encargue del ciclo de vida de todas las solicitudes que ingresen a este, con esto nos referimos a estados de la solicitudes, tiempo aproximado de llegada a destino, cancelaciones, solicitudes programadas etc.
 
 
 Objetivos del documento
