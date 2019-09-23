@@ -2,7 +2,7 @@
 
 Descripción general del problema
 
-Frente a un aumento de clientes en, la demanda de pedidos en la empresa se triplicaron. La solicitud de retiro de paquetes por teléfono, la coordinación por radio con los mensajeros y la estimación de tiempo de espera, se volvió menos eficaz.
+Frente a un aumento de clientes, la demanda de pedidos en la empresa se triplicaron. La solicitud de retiro de paquetes por teléfono, la coordinación por radio con los mensajeros y la estimación de tiempo de espera, se volvió menos eficaz.
 
 Objetivo de negocio
 
@@ -10,7 +10,7 @@ Con el avance de la tecnología y el aumento de la demanda en los servicios de e
 
 Objetivos del sistema
 
-El objetivo del sistema es brindarle una plataforma web a los clientes en la cual puedan realizar solicitudes de entregas y coordinar con repartidores disponibles las mismas. La idea es que el sistema se encargue del ciclo de vida de todas las solicitudes que ingresen a este, con esto nos referimos a estados de la solicitudes, tiempo aproximado de llegada a destino, cancelaciones, solicitudes programadas etc.
+El objetivo del sistema es brindarle una plataforma web a los clientes en la cual puedan realizar solicitudes de entregas y coordinar con repartidores disponibles las mismas. Se requiere que el sistema se encargue del ciclo de vida de todas las solicitudes que ingresen a este, con esto nos referimos a estados de la solicitudes, tiempo aproximado de llegada a destino, cancelaciones, solicitudes programadas etc.
 
 
 Objetivos del documento
@@ -20,14 +20,14 @@ El objetivo de este documento es introducir al lector en los objetivos, requerim
 
 Alance del sistema
 
-    • Implementar un sitio web para la solicitudes de entregas.
+    • Implementar un sitio web para las solicitudes de entregas.
     • Permitir a los clientes generar solicitudes y poder seguir el estado de la misma hasta su culminación.
-    • Permitir a los clientes planificar solicitudes.
+    • Permitir a los clientes planificar solicitudes.(o entregas)
     • Permitir a los repartidores recibir solicitudes, informar inicio y fin, recibir recordatorios de envíos pactados y hacer cancelaciones.
     • Permitir a los directivos visualizar estadísticas.
     • Permitir a los operadores generar solicitudes y ver estados de las mismas.
     • Comunicarse con servicios externos para la normalización y visualización de las direcciones en un mapa. 
-    • El servicio solo funcionar en horario comercial con un volumen razonable de productos.
+    • El servicio solo funcionara en horario comercial con un volumen razonable de productos.
     • Los pagos quedaran exentos de la aplicación.
     • El sistema no se encargara de la administración de repartidores,operadores y directivos.
 
