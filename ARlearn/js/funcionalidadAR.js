@@ -49,6 +49,10 @@ var functional=document.getElementById("functional");
      logo.style.transform="translate(0%,0%) scale(1)";
   
     }
+
+
+
+    
   });
 
 

@@ -22,23 +22,18 @@ header{
 }
 .cabecera{
     position: absolute;
-    
- 
     align-items: center;
-   background-color: rgba(255, 255, 255, 0.3);
-  
-    
+     background-color: rgba(255, 255, 255, 0.3);
     width: 100%;
     height: 2em;
     padding-top: 3em;;
     top: 11%;
-    margin: 0;
-    box-shadow: 0 8px 12px -12px rgba(13, 15, 160, 0.377) inset;
+    margin-top: 0;
+    box-shadow: 0 8px 12px -12px rgba(13, 15, 160, 0.377) inset);
     justify-content: center;
     align-items: center;
     transition: border-radius 1s ease-in-out, background-color 0.1s ease-in-out;
 
-  
 z-index: 1040;
 
   
@@ -95,13 +90,10 @@ li:hover{
 .logo{
     position: absolute;
     float: left;
-    width: 6.5em;
+    width: 9em;
     height: auto;
    z-index: 99999;
-   
-   
     height: auto;
-   
     display: flex;
     justify-content: center;
     text-align: center;
@@ -111,11 +103,12 @@ li:hover{
     background-color: white;
     box-shadow: 6px 12px 6px -6px rgba(0, 0, 0, 0.6), -6px -6px 12px 0 rgba(0,0,0,0.2)  inset;
     transition: all 0.5s ease-in-out;
+    margin-top: 60px;
     
 }
 
 .logo img {
-    width: 100%; 
+    width: 102%; 
     position: relative;
 }
 
@@ -127,35 +120,30 @@ li:hover{
     display: flex;
     justify-content: left;
     align-items: center;
-     margin-top: 200px;
-    height: 600px;;
-
-   
+    height: 600px;
     width: 100%;
-   
-    background-color: blue;
     background-image: url(images/font.svg);
     background-size: cover;
     border-radius: 0 0 12px 12px;
-
+    background-repeat: no-repeat;
     font-size: 3em;
     color: white;
-    background-color: aqua;
     font-family: "Dosis";
 
     box-shadow: 6px 12px 6px -6px rgba(0, 0, 0, 0.418) inset;
 }
 
 .fondo2{
+    top: 0px;
     display: flex;
     flex-direction: column;
     flex: 1;
     width: 100%;
     height: 1800px;
     margin: 0;
-    background-image: url(../images/banner.png);
+    background-image: url(../images/2963.png);
     position: absolute;
-    top:60px;
+   
 
 }
 
@@ -180,12 +168,20 @@ li:hover{
     flex-direction: row;
     width:70%;
     height: 50px;
-    
     text-align: center;
     justify-content: center;
     align-items: center;
     
     
+}
+
+.map{
+  height: 600px;
+  width: 80%;
+  margin-top: 10px;
+  padding: 0.5em;
+  background-color: rgba(240, 248, 255, 0.288);
+  border-radius: 0.5em; 
 }
 
 .column{
@@ -197,6 +193,9 @@ li:hover{
     margin-bottom: 100px;
 }
 
+.contenedor:nth-child(3n){
+  margin-top: 100px;
+}
 
 
 
@@ -211,23 +210,15 @@ li:hover{
 }
 
 .welcome{
-    
-   
-    
-    
     font-size: 3vw;;
     text-align: center;
-
     font-family: "Quicksand";
     color: black;
     text-shadow: 0 0 6px rgba(255, 255, 255, 0.8);
-    padding:0.8em;
-    background-color:rgba(255,255,255,0.5);
+    padding:0.5em;
+    background-color:rgba(255,255,255,0.8);
     border-radius: 30px;
-    padding-right: 0em;
-    
-
-    
+    padding-right: 0em;  
 }
 
 .red{
@@ -255,6 +246,7 @@ li:hover{
     opacity: 0;
     border-radius: 30px 30px 0 0 ;
     overflow:hidden;
+    z-index: 9999;
 
   }
 
@@ -365,10 +357,11 @@ li:hover{
 }
 
 
- @media screen and (max-width: 1920px)
+ @media screen and (max-width: 1900px)
  {
    .logo{
-     width: 6.5em;
+     margin-top: 0;
+     width: 8em;
    }
 
  }
@@ -382,6 +375,7 @@ li:hover{
     }
    .cabecera{
      display: none;
+
    }
 
    .hamburger{
@@ -438,6 +432,7 @@ li:hover{
     }
 
    .logo{
+    margin-top: 0;
      padding: 1em;
      width: 6em;
    }
@@ -505,6 +500,7 @@ li:hover{
 
     .column{
       flex-direction: column;
+      margin-bottom: 40px;
     }
 
     .direction{
@@ -542,6 +538,7 @@ li:hover{
     }
 
    .logo{
+    margin-top: 0;
      padding: 1em;
      width: 6em;
    }
@@ -566,6 +563,7 @@ li:hover{
   {
 
     .logo{
+      margin-top: 0;
       width: 6em;
       padding: 1em;
      
@@ -597,6 +595,7 @@ li:hover{
   {
 
     .logo{
+      margin-top: 0;
       width: 6em;
       padding: 1em;
      
@@ -622,6 +621,7 @@ li:hover{
   {
 
     .logo{
+      margin-top: 0;
       width: 5em;
         padding: 1em;
      
