@@ -20,7 +20,7 @@ fondo.addEventListener('click', function(e)
   {
   
     var scroll=window.pageYOffset;
-    console.log(scroll);
+  
  
    
  
@@ -28,8 +28,8 @@ fondo.addEventListener('click', function(e)
  if (scroll>111)
  {
   var opacity=scroll/1000+0.3;
-  console.log(opacity);
-  cabecera.style.backgroundColor="rgba(255, 255, 255,"+ opacity + ")";
+ 
+  cabecera.style.backgroundColor="rgba(231, 72, 72,"+ opacity + ")";
   
   cabecera.style.top="0";
   cabecera.style.position="fixed";

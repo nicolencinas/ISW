@@ -10,7 +10,6 @@ var functional=document.getElementById("functional");
   {
   
     var scroll=window.pageYOffset;
-    console.log(scroll);
  
    
  
@@ -18,8 +17,7 @@ var functional=document.getElementById("functional");
  if (scroll>111)
  {
   var opacity=scroll/1000+0.3;
-  console.log(opacity);
-  cabecera.style.backgroundColor="rgba(255, 255, 255,"+ opacity + ")";
+  cabecera.style.backgroundColor="rgba(189, 33, 335,"+ opacity + ")";
   
   cabecera.style.top="0";
   cabecera.style.position="fixed";

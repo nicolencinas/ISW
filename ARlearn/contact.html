@@ -19,164 +19,29 @@
 
 <style>
  
-
-
-  @media screen and (max-width: 1134px)
-  {
-
-    .contenedor{
-
-      
-      margin-left: 2%;
-      background-color: rgba(0, 0, 0, 0.514);
-      border-radius: 2em;
-    }
-
-    .logo{
-      display: block;
-      transform: translate(20%);
-      position: relative;
-      width: 60%;
-    padding: 1.5em;
-    margin: auto;
-
-    }
-   
-
-    
-
-
-  }
-  @media screen and (max-width: 1420px)
-  {
-
-   
-    ul{
-     
-   display: none;
-    }
-   .cabecera{
-     display: none;
-   }
-
-    
-    .contenedor{
-      background-color: rgba(0, 0, 0, 0.514);
-      border-radius: 2em;
-      margin: auto;
-      
-
-    }
-
-    .logo{
-      display: block;
-      transform: translate(20%);
-      position: relative;
-      width: 60%;
-    padding: 1.5em;
-    margin: auto;
-
-    }
-  }
-
-  @media screen and (max-width: 1024px )
-  {
-
-    .mini,.screentoleft{
-      width: 100%;
-      border-radius: 0;
-      font-size: 0.8em;
-    }
-   
-    ul{
-     
-   display: none;
-    }
-   .cabecera{
-     display: none;
-   }
-
-    
-    .contenedor{
-      background-color: rgba(0, 0, 0, 0.514);
-      border-radius: 2em;
-      margin: auto;
-      
-
-    }
-
-    .logo{
-      display: block;
-      transform: translate(60%);
-      position: relative;
-      width: 40%;
-    padding: 1.5em;
-    margin: auto;
-
-    }
-  }
-  @media screen and (max-width: 607px)
-  {
-
-    .contenedor{
-
-       font-size: 0.8em;
-      margin-left: 1%;
-      margin: auto;
-      padding: 0.5em;
-     
-      
-    }
-
-    .boton,.boton2{
-      display: block;
-      justify-content: center;
-      margin: auto;
-      margin-bottom: 30px;
-    }
-
-    ul li{
-      margin-left: 50px;
-    }
-
-    .mini{
-      width: 100%;
-      border-radius: 0;
-      font-size: 0.8em;
-    }
-
-    .logo{
-      display: block;
-      transform: translate(20%);
-      position: relative;
-      width: 60%;
-    padding: 1.5em;
-    margin: auto;
-
-    }
-  }
+ @media screen and (max-width: 1420px)
+ {
 
   
-
-  /* @media screen and (max-width: 1024px)
-  {
-    .logo
-    {
-      display: block;
-      transform: translate(40%);
-      position: relative;
-      width:50%;
-    padding: 1.5em;
-    margin: auto;
-
+  .mini,.screentoleft{
+    flex-direction: row;
+      width: 100%;
+      border-radius: 0;
+      font-size: 0.8em;
     }
-  } */
+ }
+
+
+
+ 
 </style>
 </head>
-<a href="home.html">
+<div class="contenedorlogo">
 <div class="logo" id="logo">
   <img src="images/ArlearnLOGO.svg" alt="home.html">
-    </div></a>
+    </div>
+  </div>
+  
 <header>
    
 
@@ -278,13 +143,33 @@
    
     
   </div>
+
+  <div class="screentoleft mini">
+
+
+      <div class="largeright">
+    
+        <a class="mail" href="mailto:eve_aragon@hotmail.com">Oscar Umbert</a>
+        <p>Director del Departamento <br> de Arquitectura de redes</p>
+  
+    
+        
+    
+      </div>
+    
+      <div class="smallleft">
+        <img src="images/oscar.png" style="width: 50%;" alt="" >
+        
+      </div>
+    
+      
+    
+     
+      
+    </div>
   
 
   </div>
-
-   
-
-  <script src="js/funcionalidadAR.js"></script>
 
 
 </body>

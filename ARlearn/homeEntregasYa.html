@@ -3,128 +3,29 @@
 <head>
   <title>Entregas YA | Mainpage </title>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
   <link rel="stylesheet" href="styles/EstilosEY.css">
   <link rel="stylesheet" href="styles/animate.css">
-
-
   <link href="https://fonts.googleapis.com/css?family=Quicksand&display=swap" rel="stylesheet">
-
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+  <link rel="stylesheet" href="leaflet-routing-machine-3.2.12/dist/leaflet-routing-machine.css" /> 
+  <link rel="stylesheet" href=" https://unpkg.com/leaflet@1.2.0/dist/leaflet.css" />
+  
   <script src="https://code.jquery.com/jquery-3.2.1.js" ></script>
   <script src=" https://unpkg.com/leaflet@1.2.0/dist/leaflet.js "></script>
-<link rel="stylesheet" href=" https://unpkg.com/leaflet@1.2.0/dist/leaflet.css" />
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-
-  <script>
-
-  $(document).ready(function () 
-  {
-
-
-    $("#calle").keyup(function(e) {
-    if(e.which == 13) {
-     $("#submit").click();}
-});
-
-
-
-
-$("#city").keyup(function(e) {
-    if(e.which == 13) {
-     $("#submit").click();}
-});
-  
-  //ajax para obtener las coordenadas
-  var map = L.map('map').
-				setView([-34.6131516, -58.3772316],6);
-
-        L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-				attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://cloudmade.com">CloudMade</a>',
-				maxZoom: 18
-				}).addTo(map);
-
-        var marker=L.marker([-34.6131516, -58.3772316], {draggable: true}).addTo(map);
-    
-	$("#submit").click(function(){
-		
-		$.ajax({
-			url : 'http://servicios.usig.buenosaires.gob.ar/normalizar/',
-			data : { 'direccion':'"'+$("#calle").val()+'","'+$("#city").val()+'"'},
-			type : 'GET',
-			dataType : 'json',
-			success : function(json) {
-				var result = null;
-				var x = 0;
-				var y = 0;
-				var srid = 0;
-				$("#form").hide();
-				result = JSON.parse(JSON.stringify(json));		
-        
-        
-			
-        if (result['direccionesNormalizadas'][0]==undefined || result['direccionesNormalizadas'][0].coordenadas==undefined )
-        {
-          alert("No existe la direccion "+$("#calle").val()+", "+$("#city").val()); 
-        }
-
-        else{
-
-      
-          x = result['direccionesNormalizadas'][0].coordenadas.x;
-				y = result['direccionesNormalizadas'][0].coordenadas.y;
-				srid = result['direccionesNormalizadas'][0].coordenadas.srid;
-        map.setView([y, x],srid);
-        L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-				attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://cloudmade.com">CloudMade</a>',
-				maxZoom: 18
-				}).addTo(map);
-
-				L.control.scale().addTo(map);
-          
-				L.marker([y, x], {draggable: true}).addTo(map);
-        }
-      
-        
-       
-				
-				//comienza el servicio para dibujar el mapa
-			
-	 
-       
-
-			},
-			error : function(jqXHR, status, error) {
-				alert('Disculpe, existió un problema');
-			}
-		});
-	});
-
- 
- });
-  </script>
-
-<style>
-#map { 
- 
-
-  display: block;
-	width: 100%;
-  height: 600px; 
-  
-  }
-</style>
-
+  <script src="js/normalizacion.js"></script>
+  <script src="leaflet-routing-machine-3.2.12/dist/leaflet-routing-machine.js"></script>
 </head>
+
 <div class="logo" id="logo">
   <img src="images/Entregas2.png" alt="">
-    </div>
-<header>
-   
+</div>
 
+
+<header>
 <div class="cabecera animated bounceInLeft delay-500ms" id="cabecera">
 
- 
  
   <ul id="sticky">
     <a href="home.html"><li>Pagina Principal</li> </a>
@@ -133,73 +34,65 @@ $("#city").keyup(function(e) {
     <a href="clients.html"> <li>Clientes</li></a>
     <a href="contact.html"><li>Contacto</li></a>
   </ul>
-
 </div>
-
 </header>
 
-<body >
 
+<body>
   <div class="fondo2" id="fondo">
 
-    <div class="contenedor">
-      <p class="welcome" >Bienvenidos a Entregas<span class=" red" >YA</span></p> 
+  <div class="contenedor">
+    <p class="welcome" >Bienvenidos a Entregas<span class=" red" >YA</span></p> 
   </div>
 
-  <div class="contenedor column">
-
-    <input type="text" class="direction" id="calle" placeholder="Ingrese calle" > 
-    <input type="text" class="direction" id="city" placeholder="Ingrese ciudad" >
-    <input type="button" class="direction" id="submit" value="Buscar en el mapa">
+  <div class="contenedor  ">
+    <a id="origen" >Origen</a>
+    <input type="text" class="direction" id="calle1" placeholder="Ingrese direccion" onblur="esconder('normalizada1','norm1',this)"> 
+    <input type="button" class="direction" id="submit1" value="Buscar en el mapa">
   </div>
 
-  <div class="contenedor map ">
+  <div class="contenedor" id="norm1">
+      <select name="normalizadas" id="normalizada1" class="selector" size="4" onchange="mostrarValor('calle1',this,'norm1')"></select>
+  </div>
 
+<div class="contenedor  ">
+  <a id="destino" >Destino</a>
+  <input type="text" class="direction" id="calle2" placeholder="Ingrese direccion" onblur="esconder('normalizada2','norm2',this)" > 
+  <input type="button" class="direction" id="submit2" value="Buscar en el mapa">
+</div>
+
+<div class="contenedor" id="norm2">
+    <select name="normalizadas" id="normalizada2" size="4" class="selector" onchange="mostrarValor('calle2',this,'norm2')"></select>
+</div>
+
+<div class="contenedor  ">
+<input type="button" class="direction" id="submit3" value="Ver recorrido">
+</div>
+
+<div class="contenedor map ">
     <div id="map" ></div>
-
-  </div>
-
-
-  
-
-  
-    
-
-  </div>
+    </div>
+</div>
 
   <div class="hamburger" id="hamburger">
     <div class="trigger" onclick="mostrarMenu()">
-
     </div>
-
   </div>
+
   <div class="menulateral" id="menulateral" onclick="closeMenu()" oncontextmenu="closeMenu()">
 
- 
-    <div class="close" onclick="closeMenu()">
+  <div class="close" onclick="closeMenu()">
  X
     </div>
- 
-              <ul id="ghost">
-                <a href="home.html"><li>Pagina Principal</li> </a>
-                <a href="who.html"> <li>Nosotros </li></a>
-                <a href="services.html"><li>Servicios</li></a>
-                <a href="clients.html"> <li>Clientes</li></a>
-                <a href="contact.html"><li>Contacto</li></a>
-              </ul>
-            
-            </div>
-     
-
- 
-
-<script  src="js/funcionalidad.js">
-
-
-
-</script>
-
-
-
+      <ul id="ghost">
+        <a href="home.html"><li>Pagina Principal</li> </a>
+        <a href="who.html"> <li>Nosotros </li></a>
+        <a href="services.html"><li>Servicios</li></a>
+        <a href="clients.html"> <li>Clientes</li></a>
+        <a href="contact.html"><li>Contacto</li></a>
+      </ul>        
+    </div>
+    
+<script  src="js/funcionalidad.js"></script>
 </body>
 </html>
