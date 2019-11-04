@@ -53,6 +53,24 @@ var functional=document.getElementById("functional");
     
   });
 
+  var why=document.getElementById("why");
+  var oculto1=document.getElementById("oculto");
+  var oculto2=document.getElementById("oculto2");
+  var oculto3=document.getElementById("oculto3");
+ 
+
+
+  function desplegar()
+  {
+  
+    
+      oculto1.style.opacity=1;
+      oculto1.style.heigth="50px";
+      oculto1.style.margintop="25px";
+    
+
+  }
+
 
 
 
