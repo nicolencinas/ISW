@@ -423,6 +423,16 @@ ul li.ad
     padding: 3em;
     font-size: 0.2em;
   }
+
+  .notvisible
+  {
+    display: none;
+    width: 0;
+
+  }
+  
+
+  
   #submit1,#submit2
   {
     padding: 0.5em;
@@ -448,7 +458,7 @@ ul li.ad
   
 .direction
 {
-  width: 30%;
+  width: 47%;
   display: inline-block; 
   font-size:0.35em;
   padding:0.6em;

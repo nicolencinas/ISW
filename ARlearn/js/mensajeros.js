@@ -6,6 +6,15 @@ var pointPedidos=null;
 var map = null;
 var layerpedidos,layermensajeros=null;
 
+var eyicon = L.icon({
+	iconUrl: 'images/Entregas2.png',
+
+	iconSize:     [40, 40], // size of the icon
+	iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
+	shadowAnchor: [4, 62],  // the same for the shadow
+	popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+});
+
 
 $(document).ready(function () 
 {
@@ -76,12 +85,6 @@ function obtenerMensajeros(elemento)
 			var dlat=destino.get(req).lat;
 			var dlong=destino.get(req).lon;
 
-			
-			
-
-			
-
-		
 		map.setView([olat, olong],15);
 
 		L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', 
@@ -95,10 +98,9 @@ function obtenerMensajeros(elemento)
 						layerpedidos.clearLayers();
 						layermensajeros.clearLayers();
 
-							
 						
-						var op=L.marker([olat, olong], {draggable: true}).bindPopup("Origen pedido Nº "+urlpedido);
-						var dp=L.marker([dlat, dlong], {draggable: true}).bindPopup("Destino pedido Nº "+urlpedido);
+						var op=L.marker([olat, olong]).bindPopup("Origen pedido Nº "+urlpedido);
+						var dp=L.marker([dlat, dlong]).bindPopup("Destino pedido Nº "+urlpedido);
 						
 						layerpedidos.addLayer(op);
 						layerpedidos.addLayer(dp);
@@ -119,19 +121,19 @@ function obtenerMensajeros(elemento)
 					var mlat=position.lat;
 					var mlong=position.lon;
 
-					var om=L.marker([mlat, mlong], {draggable: true}).bindPopup("Mensajero id "+id1)
 					
-				
+									
 
 								$.ajax(
 								{
 									
 									url : 'https://entregasya.herokuapp.com/api/deliveryDrivers/'+id1,
-								
+									async:false,
 									type : 'GET',
 									dataType : 'json',
 									success : function(json) 
 									{
+										
 									result = JSON.parse(JSON.stringify(json));		
 	
 									var driver=result['driver'];
@@ -141,6 +143,15 @@ function obtenerMensajeros(elemento)
 									$("#mensajeros").append('<option value='+driver.id+'> -Nº '+driver.id+' '
 											+driver.name+' '+driver.surname+' ('+car +')  </option>');
 
+											
+										
+
+									 var om=L.marker([mlat, mlong], {icon:eyicon});
+									 
+			
+        
+											om.bindPopup(driver.name+' '+driver.surname)
+											layermensajeros.addLayer(om);
 									
 								},
 									error : function(jqXHR, status, error) 
@@ -150,7 +161,7 @@ function obtenerMensajeros(elemento)
 								})
 
 							
-								layermensajeros.addLayer(om);
+								
 								
 				}
 			

@@ -303,3 +303,18 @@ function mostrarValor(input,valor,contenedor)
 
 }
 
+function normalizarOrigen()
+{
+	$("#submit1").click();
+}
+
+function normalizarDestino()
+{
+	$("#submit2").click();
+
+
+}
+
+
+
+
