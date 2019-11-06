@@ -33,7 +33,7 @@ header
   position: absolute;
   align-items: center;
   background-color: rgba(231, 72, 72, 0.3);
-  width: 120%;
+  width: 100%;
   height: 2em;
   padding-bottom: 3em;;
   top: 11%;
@@ -595,6 +595,27 @@ right: 50px;
 color: grey;
 }
 
+.asignacion
+{
+  width: 10em;
+  height: 92%;
+  font-size: 1em;
+  display: flex;
+  position: absolute;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.575);
+  padding: 0.2em;
+  right:0;
+  top: 0px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  border-radius: 1em 0 0 1em;
+  
+  animation-duration: 0.2s;
+  animation-delay: 1.5s;
+  animation-timing-function: ease-in-out;
+}
 
 
 

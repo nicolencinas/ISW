@@ -36,6 +36,7 @@
       <a href="clients.html"> <li>Clientes</li></a>
       <a href="contact.html"><li>Contacto</li></a>
     </ul>
+    <a href="homeEntregasYa.html" class="asignacion animated fadeIn" > Crear Pedido Nuevo </a>
   </div>
   </header>
 
@@ -51,7 +52,7 @@
 
     <div class="contenedor">
         <i class="fas fa-clipboard-list mini" style="margin-right: 1em;" ></i>
-      <select name="mensajeros" id="pedidos" class="selector" style="opacity: 1;" onchange="obtenerMensajeros(this)">
+      <select name="mensajeros" id="pedidos" class="selector" style="opacity: 1;" onchange="obtenerMensajeros(this);">
         <option value="default"> Seleccione el numero de pedido...</option>
       </select>
     </div>
@@ -61,12 +62,7 @@
         <option value="default">Sin informacion</option>
       </select>
     </div>
-    <div class="contenedor">
-      <select name="mensajeros8" id="mensajeros" class="selector" style="opacity: 1;">
-        <option value="default"> Seleccione el numero de pedido...</option>
-      </select>
-    </div>
-
+    
     <br>
 
   <div class="contenedor map ">
@@ -76,28 +72,25 @@
     
   </div>
 
-
-
-
-
-    <div class="hamburger" id="hamburger">
-      <div class="trigger">
-      </div>
+  
+  <div class="hamburger" id="hamburger">
+    <div class="trigger" onclick="mostrarMenu()">
     </div>
+  </div>
 
-    <div class="menulateral" id="menulateral">
+  <div class="menulateral" id="menulateral" onclick="closeMenu()" oncontextmenu="closeMenu()">
 
-    <div class="close">
-  X
-      </div>
-        <ul id="ghost">
-          <a href="home.html"><li>Pagina Principal</li> </a>
-          <a href="who.html"> <li>Nosotros </li></a>
-          <a href="services.html"><li>Servicios</li></a>
-          <a href="clients.html"> <li>Clientes</li></a>
-          <a href="contact.html"><li>Contacto</li></a>
-        </ul>        
-      </div>
-      
+  <div class="close" onclick="closeMenu()">
+X
+    </div>
+      <ul id="ghost">
+        <a href="home.html"><li>Pagina Principal</li> </a>
+        <a href="who.html"> <li>Nosotros </li></a>
+        <a href="services.html"><li>Servicios</li></a>
+        <a href="clients.html"> <li>Clientes</li></a>
+        <a href="contact.html"><li>Contacto</li></a>
+      </ul>        
+    </div>
+      <script src="js/funcionalidad.js"></script>
   </body>
   </html>
