@@ -16,8 +16,10 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
     <script src="leaflet-routing-machine-3.2.12/dist/leaflet-routing-machine.js"></script>
     <script src="https://kit.fontawesome.com/80d6afe3e7.js" crossorigin="anonymous"></script>
-    <script src="js/mensajeros.js"></script>
-    <script src="js/mensajero.js"></script>
+	 <script src="js/mapa.js"></script>
+	 <script src="js/mensajeros.js"></script>
+	  <script src="js/pedido.js"></script>
+   
 
   </head>
 
@@ -46,48 +48,48 @@
     <div class="fondo2" id="fondo">
 
   
-    <div class="contenedor">
-      <p class="welcome" style="padding: 0.5em;">Página de asignación de pedido</p>
+      <div class="contenedor">
+        <p class="welcome" style="padding: 0.5em;">Página de asignación de pedido</p>
+      </div>
+  
+  <div class="divide">
+  
+    <div class="left">
+        <div class="contenedor2">
+            <i class="fas fa-clipboard-list mini" style="margin-right: 1em;" ></i>
+          <select name="mensajeros" id="pedidos" class="selector" style="opacity: 1;" onchange="obtenerMensajeros(this);">
+            <option value="default"> Seleccione el numero de pedido...</option>
+          </select>
+        </div>
+        <div class="contenedor2">
+            <i class="fas fa-user-friends mini"></i>
+          <select name="mensajeros" id="mensajeros" class="selector" style="opacity: 1;" onchange="obtenerRutas(this)">
+            <option value="default">Sin informacion</option>
+          </select>
+        </div>
+  
+        <div class="info" id="ficha">
+          <h1 style="margin-left:auto;margin-right:auto; font-size: 1.5em;" >Ficha del pedido</h1>
+         
+        </div>
+  
+        <button value="holis" id="add" onclick="agregar()"></button>
+  
     </div>
-
-<div class="divide">
-
-  <div class="left">
-      <div class="contenedor2">
-          <i class="fas fa-clipboard-list mini" style="margin-right: 1em;" ></i>
-        <select name="mensajeros" id="pedidos" class="selector" style="opacity: 1;" onchange="obtenerMensajeros(this);">
-          <option value="default"> Seleccione el numero de pedido...</option>
-        </select>
-      </div>
-      <div class="contenedor2">
-          <i class="fas fa-user-friends mini"></i>
-        <select name="mensajeros" id="mensajeros" class="selector" style="opacity: 1;" onchange="obtenerRutas(this)">
-          <option value="default">Sin informacion</option>
-        </select>
-      </div>
-
-      <div class="info" id="ficha">
-        <h1 style="margin-left:auto;margin-right:auto; font-size: 1.5em;" >Ficha del pedido</h1>
-       
-      </div>
-
-      <button value="holis" id="add" onclick="agregar()"></button>
-
-  </div>
-
-  <div class="right">
-      <div class="contenedor2 map">
-          <div id="map" ></div>
-          </div>
-
-  </div>
-
-
-</div>
-    
+  
+    <div class="right">
+        <div class="contenedor2 map">
+            <div id="map" ></div>
+            </div>
+  
     </div>
-
-<div class="hamburger" id="hamburger">
+  
+  
+  </div>
+      
+      </div>
+  
+  <div class="hamburger" id="hamburger">
     <div class="trigger" onclick="mostrarMenu()">
     </div>
   </div>
@@ -105,7 +107,6 @@ X
         <a href="contact.html"><li>Contacto</li></a>
       </ul>        
     </div>
-    
-<script  src="js/funcionalidad.js"></script>
-</body>
-</html>
+      <script src="js/funcionalidad.js"></script>
+  </body>
+  </html>
