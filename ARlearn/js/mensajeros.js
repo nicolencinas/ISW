@@ -17,7 +17,8 @@ var Mensajeros = function(elemento,
     diccionario.set("black", "Negro");
     diccionario.set("green", "Verde");
 
-
+    var driverPosition = new Object();
+    var listaMarker = new Array();
 
     var inicio = iconsMaker('images/inicio.png', 50);
     var fin = iconsMaker('images/destino.png', 50);
@@ -26,7 +27,8 @@ var Mensajeros = function(elemento,
     return {
         listarMensajeros: listarMensajeros,
         guardarInfoMapa: guardarInfoMapa,
-        listarRutas: listarRutas
+        listarRutas: listarRutas,
+        moverMensajero: moverMensajero
     }
 
     function listarMensajeros() {
@@ -49,75 +51,7 @@ var Mensajeros = function(elemento,
             }
 
 
-            $('#ficha').empty();
-            $('#ficha').append('<h1 style="margin-left:auto;margin-right:6em; font-size: 1.5em;" ><i class="fas fa-truck " style="color: white;"></i>Ficha del pedido</h1>');
-            $('#ficha').append('<p>Pedido Nº: ' + req + '</p>');
-
-
-            var start = origen.get(req);
-            var end = destino.get(req);
-
-            //Seteo la vista desde el origen del pedido
-            map.setView([start.lat, start.lon], 15);
-
-            //Limpio lo los layers
-            layerpedidos.clearLayers();
-            layermensajeros.clearLayers();
-
-            //Inicializo lo markers de inicio y de fin
-            var startMarker = markerMaker(start, inicio, "Origen pedido Nº " + urlpedido)
-            var endMarker = markerMaker(end, fin, "Destino pedido Nº " + urlpedido)
-
-            //Los agrego al layer de pedidos
-            layerpedidos.addLayer(startMarker);
-            layerpedidos.addLayer(endMarker);
-
-            //	console.log(driverspositions)
-
-
-            //recupero la lista de candidatos del pedido
-            var candidates = driverspositions.get(req);
-
-            //vacio el select de mensajeros para limpiar, si habia algo anteriormente (recurso grafico)
-            $("#mensajeros").empty();
-            $("#mensajeros").append('<option value="404">Seleccione un mensajero... </option>');
-
-            //recorro la lista de candidatos y obtengo los datos como el nombre y descripcion del vehiculo
-
-            for (var i = 0; i < candidates.length; i++) {
-                var id1 = candidates[i].driver_id;
-                var position = candidates[i].position;
-
-
-                $.ajax({
-
-                    url: 'https://entregasya.herokuapp.com/api/deliveryDrivers/' + id1,
-                    async: false,
-                    type: 'GET',
-                    dataType: 'json',
-                    success: function(json) {
-
-                        result = JSON.parse(JSON.stringify(json));
-
-                        var driver = result['driver'];
-                        var car = driver['car'].description
-                        var carcolor = driver['car'].color;
-
-                        //Agrego los id de los mensajeros a los option para poder trabajar con ellos
-                        $("#mensajeros").append('<option value=' + driver.id + '> -Nº ' + driver.id + ' ' +
-                            driver.name + ' ' + driver.surname + ' (' + car + ')  </option>');
-
-                        var eyicon = iconsMaker('images/' + carcolor + '.png', 40);
-                        var marker = markerMaker(position, eyicon, driver.name + ' ' + driver.surname);
-                        layermensajeros.addLayer(marker);
-
-                    },
-                    error: function(jqXHR, status, error) {
-                        alert('Disculpe, existió un problema');
-                    }
-                })
-            }
-
+           
             //limpio lo que tenga en ficha del pedido para actualizar la informacion
             $('#ficha').empty();
             $('#ficha').append('<h1 style="margin-left:auto;margin-right:6em; font-size: 1.5em;" ><i class="fas fa-truck " style="color: white;"></i>Ficha del pedido</h1>');
@@ -174,6 +108,11 @@ var Mensajeros = function(elemento,
 
                         var eyicon = iconsMaker('images/' + carcolor + '.png', 50);
                         var marker = markerMaker(position, eyicon, driver.id + '-' + driver.name + ' ' + driver.surname);
+
+                        driverPosition.id = driver.id;
+                        driverPosition.marker = marker;
+            
+                        listaMarker.push(driverPosition);
                         layermensajeros.addLayer(marker);
 
                         //Agrego un Escuchador al marker para cambiar el estado del select de mensajeros (recurso grafico)
@@ -200,6 +139,7 @@ var Mensajeros = function(elemento,
                         alert('Disculpe, existió un problema');
                     }
                 })
+                driverPosition = new Object();
             }
         } else {
             $('#ficha').empty();
@@ -270,11 +210,53 @@ var Mensajeros = function(elemento,
         }
     }
 
+    function moverMensajero(){
+        var movimientosMensajeros = null;
+        
+        elemento = document.getElementById("mensajeros");
+        var deliveryIndice = null;
+        var contador = 0;
+        listaMarker.forEach(function(element) {
+            if(element.id == elemento[elemento.selectedIndex].value){
+                deliveryIndice = contador;
+            }
+            contador++;
+        });
+        $.ajax({
+    
+            url: 'https://entregasya.herokuapp.com/api/deliverydrivers/'+elemento[elemento.selectedIndex].value+'/positions/',
+            async: false,
+            type: 'GET',
+            dataType: 'json',
+            success: function(json) {
+    
+                result = JSON.parse(JSON.stringify(json));
+    
+                movimientosMensajeros = result['positions'];
+    
+            },
+            error: function(jqXHR, status, error) {
+                alert('Disculpe, existió un problema');
+            }
+        });
+    
+        var indice = 0;
+        
+        function dibujarLayer(indice,indiceDelivery){
+            listaMarker[deliveryIndice].marker.setLatLng([movimientosMensajeros[indice].lat, movimientosMensajeros[indice].lon]);
+            console.log("dibujar");
+            if(indice+1 < movimientosMensajeros.length){
+                setTimeout(function(){ dibujarLayer(indice+1,indiceDelivery );}, 500);
+            }
+    
+    
+        }
+    
+        dibujarLayer(indice,deliveryIndice);
+    
+    }
 
-
-}
-
-//funcion encargada de crear un icono con el url y size pasados como parametro
+    //funcion encargada de crear un icono con el url y size pasados como parametro
 function iconsMaker(url, size) {
 
     var icon = L.icon({
@@ -299,3 +281,7 @@ function markerMaker(point, icono, name) {
     return om;
 
 }
+
+}
+
+
