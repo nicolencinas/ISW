@@ -5,7 +5,7 @@ var functional=document.getElementById("functional");
 var hamburger=document.getElementById("hamburger");
 var menulateral=document.getElementById("menulateral");
 var fondo=document.getElementById("fondo");
-var ul=document.getElementById("ghost");
+var ul=document.getElementById("ulghost");
 
 var oc1=document.getElementById("oculto1");
     var oc2=document.getElementById("oculto2");
@@ -165,19 +165,12 @@ function desplegar()
 
   }
 
-  function agregar()
+  oc1.addEventListener('keyup',function()
   {
-    var ficha=document.getElementById("ficha");
-    var aux=ficha.offsetHeight;
-    ficha.style.height=(aux+70)+"px"
-    $('#ficha').empty();
-    $('#ficha').append('<h1 style="margin-left:auto;margin-right:auto; font-size: 1.5em;" >Ficha del pedido</h1>');
-    $('#ficha').append('<p>Nº pedido: 36</p>');
-
-
-  }
-
-
+    var o=oc1.value+" cm";
+    console.log(o);
+    oc1.value=oc1.value+"cm"
+  });
 
 
 

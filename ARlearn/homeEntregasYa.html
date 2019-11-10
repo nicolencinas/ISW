@@ -36,99 +36,111 @@
       <a href="clients.html"> <li>Clientes</li></a>
       <a href="contact.html"><li>Contacto</li></a>
     </ul>
-    <a href="mensajeros.html" class="asignacion animated fadeIn" > Asignación de pedidos </a>
+    <a href="pedidos.html" class="asignacion animated fadeIn" > Asignación de pedidos </a>
   </div>
   </header>
 
 
   <body onload="cargaratributo()">
     <div class="fondo2" id="fondo">
+        <div class="contenedor">
+            <p class="welcome" >Bienvenidos a Entregas<span class=" red" >YA</span></p>
+          </div>
+    <div class="divide" >
+      <div class="left">
+         
+        
+            <div class="contenedor" style="margin-top:2em; margin-bottom: 1em;">
+              <p class="titulos" ><i class="fas fa-box-open"></i>Ingrese información del pedido:</p>
+            </div>
+        
+            <br>
+        
+            <div class="contenedor total">
+              <i class="fas fa-info-circle mini"></i>
+              <input type="text" class="direction total2" placeholder="Ingrese descripción del paquete"> 
+            </div>
+        
+            <div class="contenedor total" id="mas">
+                <i class="fas fa-weight-hanging mini"></i>
+                <input type="number" class="direction total2" id="peso" placeholder="Ingrese peso volumétrico del paquete"> 
+                <button class="why" id="why" onclick="desplegar()">?</button>
+            </div>
+        
+            <div class="contenedor total oculto1" id="oculto1" name="oc">
+              <i class="fas fa-ruler-vertical mini" style="margin-right: 0.9em;;"></i>
+              <input type="number" class="direction total2" id="numero1" placeholder="Ingrese alto del paquete"> 
+            </div>
+        
+            <div class="contenedor total oculto2" id="oculto2" name="oc">
+              <i class="fas fa-ruler-vertical mini" style="transform: rotate(90deg); margin-right: 0.9em;;"></i>
+              <input type="number" class="direction total2" id="numero2" placeholder="Ingrese largo del paquete"> 
+            </div>
+        
+            <div class="contenedor total oculto3" id="oculto3" name="oc">
+              <i class="fas fa-ruler-vertical mini" style="transform:rotate(-45deg); margin-right: 0.9em;"></i>
+              <input type="number" class="direction total2" id="numero3" placeholder="Ingrese ancho del paquete"> 
+            </div>
+            
+            <div class="contenedor  oculto4" id="oculto4">
+              <input type="button" class="direction" value="Calcular peso volumetrico" onclick="calcular()">
+              </div>
+              
+            <div class="contenedor  total">
+                <i class="fas fa-clipboard-list mini"></i>
+                <select name="" id="" class="selector total2" style="opacity: 1; width: 51.5%;">
+                  <option value="default">Seleccione un tipo de paquete...</option>
+                  <option value="1">Fragil</option>
+                  <option value="2">Electronica</option>
+                  <option value="3">Caja</option>
+                  <option value="4">Sobre</option>
+                </select>
+            </div>
+              
+            <div class="contenedor"  style="margin-top:2em; margin-bottom: 1em;">
+              <p class="titulos" ><i class="fas fa-map-marker-alt" style="margin-right: 1em;"></i>Ingrese origen y destino:</p>
+            </div>
+        
+            <br>
+        
+            <div class="contenedor total ">
+              <a id="origen" >Origen</a>
+              <input type="text" class="direction" id="calle1" placeholder="Ingrese dirección" onblur="esconder('normalizada1','norm1',this)"> 
+              <input type="button" class="direction" id="submit1" value="Buscar en el mapa" style="display: none;">
+            </div>
+        
+            <div class="contenedor" id="norm1">
+                <select name="normalizadas" id="normalizada1" class="selector" size="4" onchange="mostrarValor('calle1',this,'norm1');normalizarOrigen()"></select>
+            </div>
+        
+          <div class="contenedor  total">
+            <a id="destino" >Destino</a>
+            <input type="text" class="direction" id="calle2" placeholder="Ingrese dirección" onblur="esconder('normalizada2','norm2',this);normalizarDestino()" > 
+            <input type="button" class="direction notvisible" id="submit2" value="Buscar en el mapa" style="display: none;">
+          </div>
+        
+          <div class="contenedor" id="norm2">
+              <select name="normalizadas" id="normalizada2" size="4" class="selector" onchange="mostrarValor('calle2',this,'norm2')"></select>
+          </div>
+        
+          <div class="contenedor  ">
+          <input type="button" class="direction" id="submit3" value="Crear pedido">
+          </div>
+
+      </div>
+
+      <div class="right">
+          <div class="contenedor map ">
+              <div id="map" ></div>
+              </div>
+      </div>
+    </div>
+
 
   
-    <div class="contenedor">
-      <p class="welcome" >Bienvenidos a Entregas<span class=" red" >YA</span></p>
-    </div>
 
-    <div class="contenedor ">
-      <p class="titulos" ><i class="fas fa-box-open"></i>Ingrese información del pedido:</p>
-    </div>
 
-    <br>
-
-    <div class="contenedor total">
-      <i class="fas fa-info-circle mini"></i>
-      <input type="text" class="direction total2" placeholder="Ingrese descripción del paquete"> 
-    </div>
-
-    <div class="contenedor total" id="mas">
-        <i class="fas fa-weight-hanging mini"></i>
-        <input type="number" class="direction total2" id="peso" placeholder="Ingrese peso volumétrico del paquete"> 
-        <button class="why" id="why" onclick="desplegar()">?</button>
-    </div>
-
-    <div class="contenedor total oculto1" id="oculto1" name="oc">
-      <i class="fas fa-ruler-vertical mini" style="margin-right: 0.9em;;"></i>
-      <input type="number" class="direction total2" id="numero1" placeholder="Ingrese alto del paquete"> 
-    </div>
-
-    <div class="contenedor total oculto2" id="oculto2" name="oc">
-      <i class="fas fa-ruler-vertical mini" style="transform: rotate(90deg); margin-right: 0.9em;;"></i>
-      <input type="number" class="direction total2" id="numero2" placeholder="Ingrese largo del paquete"> 
-    </div>
-
-    <div class="contenedor total oculto3" id="oculto3" name="oc">
-      <i class="fas fa-ruler-vertical mini" style="transform:rotate(-45deg); margin-right: 0.9em;"></i>
-      <input type="number" class="direction total2" id="numero3" placeholder="Ingrese ancho del paquete"> 
-    </div>
-    
-    <div class="contenedor  oculto4" id="oculto4">
-      <input type="button" class="direction" value="Calcular peso volumetrico" onclick="calcular()">
-      </div>
-      
-    <div class="contenedor  total">
-        <i class="fas fa-clipboard-list mini"></i>
-        <select name="" id="" class="selector total2" style="opacity: 1; width: 51.5%;">
-          <option value="default">Seleccione un tipo de paquete...</option>
-          <option value="1">Fragil</option>
-          <option value="2">Electronica</option>
-          <option value="3">Caja</option>
-          <option value="4">Sobre</option>
-        </select>
-    </div>
-      
-    <div class="contenedor">
-      <p class="titulos" ><i class="fas fa-map-marker-alt" style="margin-right: 1em;"></i>Ingrese origen y destino:</p>
-    </div>
-
-    <br>
-
-    <div class="contenedor total ">
-      <a id="origen" >Origen</a>
-      <input type="text" class="direction" id="calle1" placeholder="Ingrese dirección" onblur="esconder('normalizada1','norm1',this)"> 
-      <input type="button" class="direction" id="submit1" value="Buscar en el mapa" style="display: none;">
-    </div>
-
-    <div class="contenedor" id="norm1">
-        <select name="normalizadas" id="normalizada1" class="selector" size="4" onchange="mostrarValor('calle1',this,'norm1');normalizarOrigen()"></select>
-    </div>
-
-  <div class="contenedor  total">
-    <a id="destino" >Destino</a>
-    <input type="text" class="direction" id="calle2" placeholder="Ingrese dirección" onblur="esconder('normalizada2','norm2',this);" > 
-    <input type="button" class="direction notvisible" id="submit2" value="Buscar en el mapa" style="display: none;">
-  </div>
-
-  <div class="contenedor" id="norm2">
-      <select name="normalizadas" id="normalizada2" size="4" class="selector" onchange="mostrarValor('calle2',this,'norm2');normalizarDestino()"></select>
-  </div>
-
-  <div class="contenedor  ">
-  <input type="button" class="direction" id="submit3" value="Crear pedido">
-  </div>
-
-  <div class="contenedor map ">
-      <div id="map" ></div>
-      </div>
+ 
   </div>
     <div class="hamburger" id="hamburger">
       <div class="trigger" onclick="mostrarMenu()">

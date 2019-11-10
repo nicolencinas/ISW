@@ -1,19 +1,24 @@
-var Mensajero = function(name,surname, color, historyPositions) {
+var Mensajero = function(id,name,surname,car,color,marker) {
     this.id=id;
     this.name = name;
     this.surname=surname;
     this.car=car;
-	this.color = color;
-    this.historyPositions = historyPositions;
+    this.color = color;
+    this.marker=marker;
+    this.historyPositions =[];
 
     var actualIx = 0;
 
 
+    this.addRuta=function(historyPositions)
+    {
+        this.historyPositions=historyPositions;
+    }
 
 
 
 
-    this.run = function(callback) {
+    this.go = function(callback) {
         var self = this;
         setTimeout(function() {
             callback(historyPositions[actualIx]);
