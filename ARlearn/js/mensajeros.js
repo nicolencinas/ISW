@@ -19,8 +19,8 @@ var Mensajeros = function(elemento,
 
 
 
-    var inicio = iconsMaker('images/inicio.png', 33);
-    var fin = iconsMaker('images/destino.png', 33);
+    var inicio = iconsMaker('images/inicio.png', 50);
+    var fin = iconsMaker('images/destino.png', 50);
     var map = null;
 
     return {
@@ -172,7 +172,7 @@ var Mensajeros = function(elemento,
                         $("#mensajeros").append('<option value=' + driver.id + '> -Nº ' + driver.id + ' ' +
                             driver.name + ' ' + driver.surname + ' (' + car + ')  </option>');
 
-                        var eyicon = iconsMaker('images/' + carcolor + '.png', 40);
+                        var eyicon = iconsMaker('images/' + carcolor + '.png', 50);
                         var marker = markerMaker(position, eyicon, driver.id + '-' + driver.name + ' ' + driver.surname);
                         layermensajeros.addLayer(marker);
 
