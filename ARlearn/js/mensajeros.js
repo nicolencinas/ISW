@@ -19,7 +19,7 @@ var Mensajeros = function(elemento,
     var mensajeros=document.getElementById("mensajeros");
     var contenedorm=document.getElementById("contenedormensajeros")
 
-
+//hola
 
     var inicio = iconsMaker('images/inicio.png', 50);
     var fin = iconsMaker('images/destino.png', 50);
