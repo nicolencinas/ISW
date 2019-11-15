@@ -61,5 +61,9 @@ function obtenerRutas(elemento){
     mensajeros.listarRutas(elemento);
 }
 
+function iniciarPedido(){
+    mensajeros.moverMensajero();
+}
+
 
 $(bootstrap);
