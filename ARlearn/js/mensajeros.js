@@ -218,7 +218,10 @@ var Mensajeros = function(elemento,
         var contador = 0;
         listaMarker.forEach(function(element) {
             if(element.id == elemento[elemento.selectedIndex].value){
+
                 deliveryIndice = contador;
+            }else{
+                layermensajeros.removeLayer(element.marker);
             }
             contador++;
         });
@@ -256,6 +259,7 @@ var Mensajeros = function(elemento,
     
     }
 
+   
     //funcion encargada de crear un icono con el url y size pasados como parametro
 function iconsMaker(url, size) {
 

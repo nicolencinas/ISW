@@ -3,6 +3,7 @@ var destino = new Map();
 var driverspositions = new Map();
 var map = null;
 var mensajeros = null;
+var incidencias = null;
 
 var bootstrap = function() 
 {
@@ -53,6 +54,10 @@ function obtenerMensajeros(elemento)
 	mensajeros = Mensajeros(elemento,origen,destino,driverspositions);
 	mensajeros.guardarInfoMapa(map);
     mensajeros.listarMensajeros();
+
+    incidencias = Incidencias(map.obtenerMensajeros());
+    incidencias.listarIncidencias();
+
     
 
 }
