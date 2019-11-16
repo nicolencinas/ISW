@@ -23,6 +23,8 @@ var Mensajeros = function(elemento,
     var inicio = iconsMaker('images/inicio.png', 50);
     var fin = iconsMaker('images/destino.png', 50);
     var map = null;
+    var mensajeros=document.getElementById("mensajeros");
+    var contenedorm=document.getElementById("contenedormensajeros")
 
     return {
         listarMensajeros: listarMensajeros,
@@ -56,6 +58,9 @@ var Mensajeros = function(elemento,
             $('#ficha').empty();
             $('#ficha').append('<h1 style="margin-left:auto;margin-right:6em; font-size: 1.5em;" ><i class="fas fa-truck " style="color: white;"></i>Ficha del pedido</h1>');
             $('#ficha').append('<p>Pedido Nº:' + req + '</p>');
+
+            mensajeros.size=1;
+            contenedorm.style.height="16px";
 
 
             var start = origen.get(req);
@@ -132,6 +137,9 @@ var Mensajeros = function(elemento,
 
                         var info = new Mensajero(driver.id, driver.name, driver.surname, car, carcolor, marker)
                         deliveryinfo.set(driver.id, info);
+                        mensajeros.size=mensajeros.size+1;
+                        var e=contenedorm.offsetHeight+30;
+                        contenedorm.style.height=e+"px";
 
 
                     },
@@ -148,7 +156,12 @@ var Mensajeros = function(elemento,
             layerpedidos.clearLayers();
             layermensajeros.clearLayers();
             ficha.style.height = "70px"
-
+            
+            mensajeros.size=1;
+           
+            contenedorm.style.height="36px";
+            $("#mensajeros").empty();
+            $("#mensajeros").append('<option value="404">Sin informacion </option>');
         }
     }
 

@@ -63,7 +63,7 @@
             <option value="default"> Seleccione el numero de pedido...</option>
           </select>
         </div>
-        <div class="contenedor2">
+        <div class="contenedor2" id="contenedormensajeros">
             <i class="fas fa-user-friends mini"></i>
           <select name="mensajeros" id="mensajeros" class="selector" style="opacity: 1;" onchange="obtenerRutas(this)">
             <option value="default">Sin informacion</option>
@@ -75,8 +75,7 @@
          
         </div>
   
-        <button value="holis" id="add" onclick="cambiarPosicion(600)">Hola</button>
-        <div class="contenedor  ">
+        <div class="contenedor">
           <input type="button" class="direction" id="confirmar" value="Confirmar" onclick="iniciarPedido()">
         </div>
     </div>
