@@ -4,16 +4,16 @@ var driverspositions = new Map();
 var map = null;
 var mensajeros = null;
 var incidencias = null;
+var urlPedido = null;
 
-var bootstrap = function() 
-{
+var bootstrap = function() {
 
 
 
     map = crearMapa('map');
 
     $.ajax({
-        url: 'https://entregasya.herokuapp.com/api/requests',
+        url: urlPedido,
         type: 'GET',
         dataType: 'json',
         success: function(json) {
@@ -57,9 +57,6 @@ function obtenerMensajeros(elemento)
 
     incidencias = Incidencias(map.obtenerMensajeros());
     incidencias.listarIncidencias();
-
-    
-
 }
 
 function obtenerRutas(elemento){
@@ -69,6 +66,4 @@ function obtenerRutas(elemento){
 function iniciarPedido(){
     mensajeros.moverMensajero();
 }
-
-
 $(bootstrap);

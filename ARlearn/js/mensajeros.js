@@ -1,4 +1,4 @@
-var Mensajeros = function(elemento,
+var Mensajeros = function (elemento,
     origen,
     destino,
     sdriverspositions) {
@@ -23,8 +23,8 @@ var Mensajeros = function(elemento,
     var inicio = iconsMaker('images/inicio.png', 50);
     var fin = iconsMaker('images/destino.png', 50);
     var map = null;
-    var mensajeros=document.getElementById("mensajeros");
-    var contenedorm=document.getElementById("contenedormensajeros")
+    var mensajeros = document.getElementById("mensajeros");
+    var contenedorm = document.getElementById("contenedormensajeros")
 
     return {
         listarMensajeros: listarMensajeros,
@@ -53,14 +53,14 @@ var Mensajeros = function(elemento,
             }
 
 
-           
+
             //limpio lo que tenga en ficha del pedido para actualizar la informacion
             $('#ficha').empty();
             $('#ficha').append('<h1 style="margin-left:auto;margin-right:6em; font-size: 1.5em;" ><i class="fas fa-truck " style="color: white;"></i>Ficha del pedido</h1>');
             $('#ficha').append('<p>Pedido Nº:' + req + '</p>');
 
-            mensajeros.size=1;
-            contenedorm.style.height="16px";
+            mensajeros.size = 1;
+            contenedorm.style.height = "16px";
 
 
             var start = origen.get(req);
@@ -99,7 +99,7 @@ var Mensajeros = function(elemento,
                     async: false,
                     type: 'GET',
                     dataType: 'json',
-                    success: function(json) {
+                    success: function (json) {
 
                         result = JSON.parse(JSON.stringify(json));
 
@@ -116,34 +116,33 @@ var Mensajeros = function(elemento,
 
                         driverPosition.id = driver.id;
                         driverPosition.marker = marker;
-            
+
                         listaMarker.push(driverPosition);
                         layermensajeros.addLayer(marker);
 
                         //Agrego un Escuchador al marker para cambiar el estado del select de mensajeros (recurso grafico)
-                        marker.addEventListener('click', function() 
-                        {
+                        marker.addEventListener('click', function () {
                             var contenido = this._popup._content.split("-");
                             var id = parseInt(contenido[0]);
-                            
-                            var mensajeros=document.getElementById("mensajeros");
-                            mensajeros.value=id;
 
-                          listar(id);
+                            var mensajeros = document.getElementById("mensajeros");
+                            mensajeros.value = id;
 
-                          
-                           
+                            listar(id);
+
+
+
                         });
 
                         var info = new Mensajero(driver.id, driver.name, driver.surname, car, carcolor, marker)
                         deliveryinfo.set(driver.id, info);
-                        mensajeros.size=mensajeros.size+1;
-                        var e=contenedorm.offsetHeight+30;
-                        contenedorm.style.height=e+"px";
+                        mensajeros.size = mensajeros.size + 1;
+                        var e = contenedorm.offsetHeight + 30;
+                        contenedorm.style.height = e + "px";
 
 
                     },
-                    error: function(jqXHR, status, error) {
+                    error: function (jqXHR, status, error) {
                         alert('Disculpe, existió un problema');
                     }
                 })
@@ -156,25 +155,23 @@ var Mensajeros = function(elemento,
             layerpedidos.clearLayers();
             layermensajeros.clearLayers();
             ficha.style.height = "70px"
-            
-            mensajeros.size=1;
-           
-            contenedorm.style.height="36px";
+
+            mensajeros.size = 1;
+
+            contenedorm.style.height = "36px";
             $("#mensajeros").empty();
             $("#mensajeros").append('<option value="404">Sin informacion </option>');
         }
     }
 
-    function guardarInfoMapa(mapa) 
-    {
+    function guardarInfoMapa(mapa) {
         map = mapa.obtenerMapa();
         layerpedidos = mapa.obtenerPedidos();
         layermensajeros = mapa.obtenerMensajeros();
 
     }
 
-    function listarRutas(elemento)
-     {
+    function listarRutas(elemento) {
         var urlpedido = elemento[elemento.selectedIndex].value;
         var req = parseInt(urlpedido);
 
@@ -187,8 +184,7 @@ var Mensajeros = function(elemento,
         var mens = deliveryinfo.get(req);
 
 
-        if (req == 404)
-         {
+        if (req == 404) {
             $('p').remove(".mensajero");
             ficha.style.height = "140px";
 
@@ -223,81 +219,81 @@ var Mensajeros = function(elemento,
         }
     }
 
-    function moverMensajero(){
+    function moverMensajero() {
         var movimientosMensajeros = null;
-        
+
         elemento = document.getElementById("mensajeros");
         var deliveryIndice = null;
         var contador = 0;
-        listaMarker.forEach(function(element) {
-            if(element.id == elemento[elemento.selectedIndex].value){
+        listaMarker.forEach(function (element) {
+            if (element.id == elemento[elemento.selectedIndex].value) {
 
                 deliveryIndice = contador;
-            }else{
+            } else {
                 layermensajeros.removeLayer(element.marker);
             }
             contador++;
         });
         $.ajax({
-    
-            url: 'https://entregasya.herokuapp.com/api/deliverydrivers/'+elemento[elemento.selectedIndex].value+'/positions/',
+
+            url: 'https://entregasya.herokuapp.com/api/deliverydrivers/' + elemento[elemento.selectedIndex].value + '/positions/',
             async: false,
             type: 'GET',
             dataType: 'json',
-            success: function(json) {
-    
+            success: function (json) {
+
                 result = JSON.parse(JSON.stringify(json));
-    
+
                 movimientosMensajeros = result['positions'];
-    
+
             },
-            error: function(jqXHR, status, error) {
+            error: function (jqXHR, status, error) {
                 alert('Disculpe, existió un problema');
             }
         });
-    
+
         var indice = 0;
-        
-        function dibujarLayer(indice,indiceDelivery){
+
+        function dibujarLayer(indice, indiceDelivery) {
             listaMarker[deliveryIndice].marker.setLatLng([movimientosMensajeros[indice].lat, movimientosMensajeros[indice].lon]);
             console.log("dibujar");
-            if(indice+1 < movimientosMensajeros.length){
-                setTimeout(function(){ dibujarLayer(indice+1,indiceDelivery );}, 500);
+            if (indice + 1 < movimientosMensajeros.length) {
+                setTimeout(function () { dibujarLayer(indice + 1, indiceDelivery); }, 500);
             }
-    
-    
+
+
         }
-    
-        dibujarLayer(indice,deliveryIndice);
-    
+
+        dibujarLayer(indice, deliveryIndice);
+
     }
 
-   
+
     //funcion encargada de crear un icono con el url y size pasados como parametro
-function iconsMaker(url, size) {
+    function iconsMaker(url, size) {
 
-    var icon = L.icon({
-        iconUrl: url,
-        iconSize: [size, size],
-        iconAnchor: [22, 94],
-        shadowAnchor: [4, 62],
-        popupAnchor: [-3, -76]
-    });
+        var icon = L.icon({
+            iconUrl: url,
+            iconSize: [size, size],
+            iconAnchor: [22, 94],
+            shadowAnchor: [4, 62],
+            popupAnchor: [-3, -76]
+        });
 
-    return icon;
+        return icon;
 
 
-}
+    }
 
-//funcion encargada de crear un marker con un punto un icono y un nombre para el bindpopup
-function markerMaker(point, icono, name) {
-    var om = L.marker([point.lat, point.lon], {
-        icon: icono
-    }).bindPopup(name);
+    //funcion encargada de crear un marker con un punto un icono y un nombre para el bindpopup
+    function markerMaker(point, icono, name) {
+        var om = L.marker([point.lat, point.lon], {
+            icon: icono
+        }).bindPopup(name);
 
-    return om;
+        return om;
 
-}
+    }
 
 }
 
