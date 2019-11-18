@@ -4,7 +4,7 @@ var driverspositions = new Map();
 var map = null;
 var mensajeros = null;
 var incidencias = null;
-var urlPedido = null;
+var urlPedido = 'https://entregasya.herokuapp.com/api/requests';
 
 var bootstrap = function() {
 
