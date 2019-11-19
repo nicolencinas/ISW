@@ -36,12 +36,12 @@ var Mensajeros = function (elemento,
 		if (req != 404) {
 
 
-			var aux = ficha.offsetHeight;
-			if (aux != 140) {
-				if (aux == 340) {
+			var alto = ficha.offsetHeight;
+			if (alto != 140) {
+				if (alto == 340) {
 					ficha.style.height = "140px";
 				} else {
-					ficha.style.height = (aux + 70) + "px"
+					ficha.style.height = (alto + 70) + "px"
 
 				}
 
@@ -124,9 +124,11 @@ var Mensajeros = function (elemento,
 
 						});
 
+                        //Creo el mensajero con los datos obtenidos de la consulta y lo guardo en la lista de informacion
 						var info = crearMensajero(driver.id, driver.name, driver.surname, car, carcolor, marker);
-
-						deliveryinfo.set(driver.id, info);
+                        deliveryinfo.set(driver.id, info);
+                        
+                        
 						mensajeros.size = mensajeros.size + 1;
 						var e = contenedorMensajeros.offsetHeight + 30;
 						contenedorMensajeros.style.height = e + "px";
@@ -172,32 +174,35 @@ var Mensajeros = function (elemento,
 	function listar(req) {
 
 
+        //Obtengo la informacion del mensajero con id=req
 		var mens = deliveryinfo.get(req);
 
 
-		if (req == 404) {
+        //Si el id del mensajero es igual a 404 (default) limpio la ficha
+        if (req == 404) 
+        {
 			$('p').remove(".mensajero");
 			ficha.style.height = "140px";
 
 
 		} else {
-			var aux = ficha.offsetHeight;
+            //sino obtengo el alto de ficha para trabajar con el y el color del auto para traducirlo.
+			var alto = ficha.offsetHeight;
 			var color = diccionario.get(mens.color);
 
 
-			if (aux != 340) {
-                ficha.style.height = (aux + 200) + "px"
+            //Si el alto no es 340px tengo una  ficha incompleta y modifico su tamaño y su informacion 
+			if (alto != 340) {
+                ficha.style.height = (alto + 200) + "px"
+                actualizarFicha(mens.id,mens.name,mens.surname,mens.car,color);
 				
 			} else {
-
-                $('p').remove(".mensajero");
+            //Si el alto ya es 340px entonces esta completa siginifica que tengo que modificar la ficha
+				$('p').remove(".mensajero")
                 actualizarFicha(mens.id,mens.name,mens.surname,mens.car,color);
 			}
-
+             //Despues de todo modifico la vista del mapa
 			var marker = mens.marker;
-			marker.openPopup();
-			console.log(marker);
-
 			var latlong = marker._latlng;
 			map.setView([latlong.lat, latlong.lng], 15);
 		}
