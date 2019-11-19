@@ -6,7 +6,9 @@ var Mensajeros = function (elemento,
 	var capaPedidos, capaMensajeros, map = null;
 	var driverspositions = sdriverspositions;
 
-	var deliveryinfo = new Map();
+    var deliveryinfo = new Map();
+
+    //Diccionario utilizado para traducir lo que se trae del json
 	var diccionario = new Map();
 	diccionario.set("gray", "Gris");
 	diccionario.set("red", "Rojo");
@@ -19,6 +21,7 @@ var Mensajeros = function (elemento,
 	var inicio = iconsMaker('images/inicio.png', 50);
 	var fin = iconsMaker('images/destino.png', 50);
 
+    //Recupero el contenedor de mensajeros y su select para jugar con sus tamaños
 	var mensajeros = document.getElementById("mensajeros");
 	var contenedorMensajeros = document.getElementById("contenedormensajeros")
 
