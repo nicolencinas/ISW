@@ -27,7 +27,7 @@ var Incidencias = function (layermensajeros) {
 
         for (var i = 0; i < incidencias.length; i++) {
 
-            var eyicon = iconsMaker('images/oscar.png', 50);
+            var eyicon = iconsMaker('images/incident.png', 50);
             var marker = markerMaker(incidencias[i].coordinate, eyicon, obtenerTipo(incidencias[i].type_id));
 
             layermensajeros.addLayer(marker);
@@ -37,6 +37,7 @@ var Incidencias = function (layermensajeros) {
     }
     function obtenerTipoIncidencias(){
         var result;
+       
         $.ajax({
 
             url: 'https://entregasya.herokuapp.com/api/incidenttypes/',
@@ -54,10 +55,14 @@ var Incidencias = function (layermensajeros) {
         return result.incidenttypes;
     }
     function obtenerTipo(id){
+        var diccionario = new Map();
+        diccionario.set("accident","Accidente");
+        diccionario.set("congestion","Embotellamiento");
+        diccionario.set("massive protest","Corte de ruta");
 
         for (var i = 0; i < tipoIncidencias.length; i++) {
             if(tipoIncidencias[i].id == id){
-                return tipoIncidencias[i].description;
+                return diccionario.get(tipoIncidencias[i].description);
             }
             
         }

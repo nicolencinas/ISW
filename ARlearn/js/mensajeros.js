@@ -3,11 +3,7 @@ var Mensajeros = function (elemento,
     destino,
     sdriverspositions) {
 
-    var urlpedido = elemento[elemento.selectedIndex].value;
-    var req = parseInt(urlpedido);
-    var start = origen.get(req)
-    var end = destino.get(req)
-    var layerpedidos, layermensajeros = null;
+    var capaPedidos, capaMensajeros, map= null;
     var driverspositions = sdriverspositions;
 
     var deliveryinfo = new Map();
@@ -17,14 +13,14 @@ var Mensajeros = function (elemento,
     diccionario.set("black", "Negro");
     diccionario.set("green", "Verde");
 
-    var driverPosition = new Object();
-    var listaMarker = new Array();
+    var posicionConductor = new Object();
+    var ListaMarcadores = new Array();
 
     var inicio = iconsMaker('images/inicio.png', 50);
     var fin = iconsMaker('images/destino.png', 50);
-    var map = null;
+    
     var mensajeros = document.getElementById("mensajeros");
-    var contenedorm = document.getElementById("contenedormensajeros")
+    var contenedorMensajeros = document.getElementById("contenedormensajeros")
 
     return {
         listarMensajeros: listarMensajeros,
@@ -60,7 +56,7 @@ var Mensajeros = function (elemento,
             $('#ficha').append('<p>Pedido Nº:' + req + '</p>');
 
             mensajeros.size = 1;
-            contenedorm.style.height = "16px";
+            contenedorMensajeros.style.height = "16px";
 
 
             var start = origen.get(req);
@@ -70,15 +66,15 @@ var Mensajeros = function (elemento,
             map.setView([start.lat, start.lon], 15);
 
             //Limpio lo los layers
-            layerpedidos.clearLayers();
-            layermensajeros.clearLayers();
+            capaPedidos.clearLayers();
+            capaMensajeros.clearLayers();
 
             //Inicializo lo markers de inicio y de fin
             var startMarker = markerMaker(start, inicio, "Origen pedido Nº " + urlpedido)
             var endMarker = markerMaker(end, fin, "Destino pedido Nº " + urlpedido)
 
-            layerpedidos.addLayer(startMarker);
-            layerpedidos.addLayer(endMarker);
+            capaPedidos.addLayer(startMarker);
+            capaPedidos.addLayer(endMarker);
 
             //	console.log(driverspositions)
 
@@ -114,11 +110,11 @@ var Mensajeros = function (elemento,
                         var eyicon = iconsMaker('images/' + carcolor + '.png', 50);
                         var marker = markerMaker(position, eyicon, driver.id + '-' + driver.name + ' ' + driver.surname);
 
-                        driverPosition.id = driver.id;
-                        driverPosition.marker = marker;
+                        posicionConductor.id = driver.id;
+                        posicionConductor.marker = marker;
 
-                        listaMarker.push(driverPosition);
-                        layermensajeros.addLayer(marker);
+                        ListaMarcadores.push(posicionConductor);
+                        capaMensajeros.addLayer(marker);
 
                         //Agrego un Escuchador al marker para cambiar el estado del select de mensajeros (recurso grafico)
                         marker.addEventListener('click', function () {
@@ -134,11 +130,12 @@ var Mensajeros = function (elemento,
 
                         });
 
-                        var info = new Mensajero(driver.id, driver.name, driver.surname, car, carcolor, marker)
+                        var info=crearMensajero(driver.id, driver.name, driver.surname, car, carcolor, marker);
+                        
                         deliveryinfo.set(driver.id, info);
                         mensajeros.size = mensajeros.size + 1;
-                        var e = contenedorm.offsetHeight + 30;
-                        contenedorm.style.height = e + "px";
+                        var e = contenedorMensajeros.offsetHeight + 30;
+                        contenedorMensajeros.style.height = e + "px";
 
 
                     },
@@ -146,19 +143,19 @@ var Mensajeros = function (elemento,
                         alert('Disculpe, existió un problema');
                     }
                 })
-                driverPosition = new Object();
+                posicionConductor = new Object();
             }
         } else {
             $('#ficha').empty();
             $('#ficha').append('<h1 style="margin-left:auto;margin-right:6em; font-size: 1.5em;" ><i class="fas fa-truck " style="color: white;"></i>Ficha del pedido</h1>');
 
-            layerpedidos.clearLayers();
-            layermensajeros.clearLayers();
+            capaPedidos.clearLayers();
+            capaMensajeros.clearLayers();
             ficha.style.height = "70px"
 
             mensajeros.size = 1;
 
-            contenedorm.style.height = "36px";
+            contenedorMensajeros.style.height = "36px";
             $("#mensajeros").empty();
             $("#mensajeros").append('<option value="404">Sin informacion </option>');
         }
@@ -166,8 +163,8 @@ var Mensajeros = function (elemento,
 
     function guardarInfoMapa(mapa) {
         map = mapa.obtenerMapa();
-        layerpedidos = mapa.obtenerPedidos();
-        layermensajeros = mapa.obtenerMensajeros();
+        capaPedidos = mapa.obtenerPedidos();
+        capaMensajeros = mapa.obtenerMensajeros();
 
     }
 
@@ -225,12 +222,12 @@ var Mensajeros = function (elemento,
         elemento = document.getElementById("mensajeros");
         var deliveryIndice = null;
         var contador = 0;
-        listaMarker.forEach(function (element) {
+        ListaMarcadores.forEach(function (element) {
             if (element.id == elemento[elemento.selectedIndex].value) {
 
                 deliveryIndice = contador;
             } else {
-                layermensajeros.removeLayer(element.marker);
+                capaMensajeros.removeLayer(element.marker);
             }
             contador++;
         });
@@ -255,7 +252,7 @@ var Mensajeros = function (elemento,
         var indice = 0;
 
         function dibujarLayer(indice, indiceDelivery) {
-            listaMarker[deliveryIndice].marker.setLatLng([movimientosMensajeros[indice].lat, movimientosMensajeros[indice].lon]);
+            ListaMarcadores[deliveryIndice].marker.setLatLng([movimientosMensajeros[indice].lat, movimientosMensajeros[indice].lon]);
             console.log("dibujar");
             if (indice + 1 < movimientosMensajeros.length) {
                 setTimeout(function () { dibujarLayer(indice + 1, indiceDelivery); }, 500);
@@ -293,6 +290,22 @@ var Mensajeros = function (elemento,
 
         return om;
 
+    }
+
+    //
+    function crearMensajero(id,name,surname,car,color,marker)
+    {
+        var mensajero= new Object();
+        mensajero.id=id;
+        mensajero.name = name;
+        mensajero.surname=surname;
+        mensajero.car=car;
+        mensajero.color = color;
+        mensajero.marker=marker;
+        return mensajero;
+       
+
+        
     }
 
 }
