@@ -572,7 +572,7 @@ i{
   width: 96%;
 }
 
-.why
+.ayuda
 {
   position: relative;
   display: flex;
@@ -592,16 +592,16 @@ i{
  
 }
 
-.why:hover{
+.ayuda:hover{
   transform: scale(1.1);
   color: rgb(245, 80, 80);
 }
 
-.why:hover::after{
+.ayuda:hover::after{
   opacity: 1;
 }
 
-.why::after
+.ayuda::after
 {
 
   display: flex;

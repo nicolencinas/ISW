@@ -19,7 +19,7 @@ var bootstrap = function () {
     nu3 = document.getElementById("numero3");
 
     peso = document.getElementById("peso");
-    ayuda = document.getElementById("why");
+    ayuda = document.getElementById("ayuda");
 
   oc1.addEventListener('keyup', function () {
     var o = oc1.value + " cm";
@@ -31,7 +31,7 @@ var bootstrap = function () {
 }
 
 function cargaratributo() {
-  ayuda = document.getElementById("why");
+  ayuda = document.getElementById("ayuda");
   ayuda.setAttribute('data-value', "¿No sabes como calcularlo?")
 }
 function calcular() {
@@ -48,7 +48,7 @@ function desplegar() {
 
   ayuda.setAttribute('data-value', "¿No sabes como calcularlo?")
 
-  var botton = document.getElementById("why");
+  var botton = document.getElementById("ayuda");
 
   if (botton.innerHTML == "?") {
     oc1.className = "contenedor total desplegado1";
