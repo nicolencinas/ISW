@@ -52,11 +52,12 @@ var bootstrap = function () {
 						var y = 0;
 						var srid = 0;
 						result = JSON.parse(JSON.stringify(json));
-
+						//muestra error
 						if (result['errorMessage'] != "" && result['errorMessage'] != undefined) {
 							$("#normalizada" + numeroCalle).empty();
 							$("#normalizada" + numeroCalle).append('<option >' + 'Sin resultados' + '</option>');
 						}
+						//muestra resultado en el cuadro
 						else {
 							norm.style.height = "100px";
 							normalizada.style.height = "100px";
@@ -65,7 +66,7 @@ var bootstrap = function () {
 							$("#normalizada" + numeroCalle).append('<option value="default">Se encontraron los siguientes resultados </option>');
 
 
-
+							//recorre los resultados y los muestra
 							$.each(result, function (i, item) {
 								for (var i in item) {
 									$("#normalizada" + numeroCalle).append('<option value=' + result['direccionesNormalizadas'][i].cod_partido + '>'
@@ -169,7 +170,7 @@ function esconder(selector, element, input) {
 
 }
 
-function mostrarValor(input, valor, contenedor) {
+function esconderOpciones(input, valor, contenedor) {
 
 	var input = document.getElementById(input);
 	var selected = valor.options[valor.selectedIndex].text;

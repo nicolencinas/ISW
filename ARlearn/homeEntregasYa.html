@@ -107,22 +107,22 @@
         
             <div class="contenedor total ">
               <a id="origen" >Origen</a>
-              <input type="text" class="direction" id="calle1" placeholder="Ingrese dirección (Ej.:Callao y corrientes) " onblur="esconder('normalizada1','norm1',this)"> 
+              <input type="text" class="direction" id="calle1" placeholder="Ingrese dirección (Ej.:Callao y corrientes) "> 
               <input type="button" class="direction" id="submit1" value="Buscar en el mapa" style="display: none;">
             </div>
         
             <div class="contenedor" id="norm1">
-                <select name="normalizadas" id="normalizada1" class="selector" size="4" onchange="mostrarValor('calle1',this,'norm1');normalizarOrigen()"></select>
+                <select name="normalizadas" id="normalizada1" class="selector" size="4" onchange="esconderOpciones('calle1',this,'norm1');normalizarOrigen()"></select>
             </div>
         
           <div class="contenedor  total">
             <a id="destino" >Destino</a>
-            <input type="text" class="direction" id="calle2" placeholder="Ingrese dirección (Ej.: Juan Maria Gutierrez 1150)" onblur="esconder('normalizada2','norm2',this);normalizarDestino()" > 
+            <input type="text" class="direction" id="calle2" placeholder="Ingrese dirección (Ej.: Juan Maria Gutierrez 1150)" > 
             <input type="button" class="direction notvisible" id="submit2" value="Buscar en el mapa" style="display: none;">
           </div>
         
           <div class="contenedor" id="norm2">
-              <select name="normalizadas" id="normalizada2" size="4" class="selector" onchange="mostrarValor('calle2',this,'norm2')"></select>
+              <select name="normalizadas" id="normalizada2" size="4" class="selector" onchange="esconderOpciones('calle2',this,'norm2');normalizarDestino()"></select>
           </div>
         
           <div class="contenedor  ">
