@@ -28,6 +28,11 @@ header
   text-align: center;
 }
 
+#mensajeros select
+{
+  font-size: 1em;
+}
+
 .cabecera
 {
   position: absolute;
