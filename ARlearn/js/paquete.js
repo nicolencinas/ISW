@@ -6,7 +6,7 @@ var nu1;
 var nu2;
 var nu3;
 var peso;
-var why;
+var ayuda;
 
 var bootstrap = function () {
     oc1 = document.getElementById("oculto1");
@@ -19,7 +19,7 @@ var bootstrap = function () {
     nu3 = document.getElementById("numero3");
 
     peso = document.getElementById("peso");
-    why = document.getElementById("why");
+    ayuda = document.getElementById("why");
 
   oc1.addEventListener('keyup', function () {
     var o = oc1.value + " cm";
@@ -31,8 +31,8 @@ var bootstrap = function () {
 }
 
 function cargaratributo() {
-  why = document.getElementById("why");
-  why.setAttribute('data-value', "¿No sabes como calcularlo?")
+  ayuda = document.getElementById("why");
+  ayuda.setAttribute('data-value', "¿No sabes como calcularlo?")
 }
 function calcular() {
 
@@ -42,11 +42,11 @@ function calcular() {
 
   var calculo = (n1 + n2 + n3) / 5000;
   peso.value = calculo.toString();
-  why.click();
+  ayuda.click();
 }
 function desplegar() {
 
-  why.setAttribute('data-value', "¿No sabes como calcularlo?")
+  ayuda.setAttribute('data-value', "¿No sabes como calcularlo?")
 
   var botton = document.getElementById("why");
 
@@ -58,7 +58,7 @@ function desplegar() {
 
     botton.innerHTML = "˄";
     peso.disabled = true;
-    why.setAttribute('data-value', "Volver atras")
+    ayuda.setAttribute('data-value', "Volver atras")
 
   } else {
     oc1.className = "contenedor total oculto1";
