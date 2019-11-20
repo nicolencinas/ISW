@@ -41,7 +41,7 @@ var Mensajeros = function (elemento,
 
 			var alto = ficha.offsetHeight;
 			if (alto != 140) {
-				if (alto == 340) {
+				if (alto == 440) {
 					ficha.style.height = "140px";
 				} else {
 					ficha.style.height = (alto + 70) + "px"
@@ -56,8 +56,6 @@ var Mensajeros = function (elemento,
 
 			mensajeros.size = 1;
 			contenedorMensajeros.style.height = "16px";
-
-
 			var start = origen.get(req);
 			var end = destino.get(req);
 
@@ -73,13 +71,11 @@ var Mensajeros = function (elemento,
 			var endMarker = markerMaker(end, fin, "Destino pedido Nº " + urlpedido)
 
 			capaPedidos.addLayer(startMarker);
-			capaPedidos.addLayer(endMarker);
-
-			//	console.log(driverspositions)
-
-
+            capaPedidos.addLayer(endMarker);
+            
 			var candidates = driverspositions.get(req);
 
+            //carga la opcion default en la ficha de pedido
             opcionDefault();
 		
 			for (var i = 0; i < candidates.length; i++) {
@@ -101,9 +97,10 @@ var Mensajeros = function (elemento,
 						var car = driver['car'].description
 						var carcolor = driver['car'].color;
 
-						//Agrego los id de los mensajeros a los option
-						$("#mensajeros").append('<option value=' + driver.id + '> -Nº ' + driver.id + ' ' +
-							driver.name + ' ' + driver.surname + ' (' + car + ')  </option>');
+                        //Agrego los id de los mensajeros a los option
+                        
+						$("#mensajeros").append('<option value=' + driver.id +'> -Nº ' + driver.id + ' ' +
+							driver.name + ' ' + driver.surname + ' (' + car + ')   Puntacion:  ' + driver.score+ '/5</option>');
 
 						var eyicon = iconsMaker('images/' + carcolor + '.png', 50);
 						var marker = markerMaker(position, eyicon, driver.id + '-' + driver.name + ' ' + driver.surname);
@@ -128,7 +125,7 @@ var Mensajeros = function (elemento,
 						});
 
                         //Creo el mensajero con los datos obtenidos de la consulta y lo guardo en la lista de informacion
-						var info = crearMensajero(driver.id, driver.name, driver.surname, car, carcolor, marker);
+						var info = crearMensajero(driver.id, driver.name, driver.surname, car, carcolor, marker,driver.score);
                         deliveryinfo.set(driver.id, info);
                         
                         
@@ -194,15 +191,15 @@ var Mensajeros = function (elemento,
 			var color = diccionario.get(mens.color);
 
 
-            //Si el alto no es 340px tengo una  ficha incompleta y modifico su tamaño y su informacion 
-			if (alto != 340) {
-                ficha.style.height = (alto + 200) + "px"
-                actualizarFicha(mens.id,mens.name,mens.surname,mens.car,color);
+            //Si el alto no es 440px tengo una  ficha incompleta y modifico su tamaño y su informacion 
+			if (alto != 440) {
+                ficha.style.height = (alto + 300) + "px"
+                actualizarFicha(mens.id,mens.name,mens.surname,mens.car,color,mens.score);
 				
 			} else {
-            //Si el alto ya es 340px entonces esta completa siginifica que tengo que modificar la ficha
+            //Si el alto ya es 440px entonces esta completa siginifica que tengo que modificar la ficha
 				$('p').remove(".mensajero")
-                actualizarFicha(mens.id,mens.name,mens.surname,mens.car,color);
+                actualizarFicha(mens.id,mens.name,mens.surname,mens.car,color,mens.score);
 			}
              //Despues de todo modifico la vista del mapa
 			var marker = mens.marker;
@@ -290,14 +287,15 @@ var Mensajeros = function (elemento,
 	}
 
 	//
-	function crearMensajero(id, name, surname, car, color, marker) {
+	function crearMensajero(id, name, surname, car, color, marker,score) {
 		var mensajero = new Object();
 		mensajero.id = id;
 		mensajero.name = name;
 		mensajero.surname = surname;
 		mensajero.car = car;
 		mensajero.color = color;
-		mensajero.marker = marker;
+        mensajero.marker = marker;
+        mensajero.score=score
 		return mensajero;
 
 
@@ -314,11 +312,43 @@ var Mensajeros = function (elemento,
         $("#mensajeros").append('<option value="404">Seleccione un mensajero... </option>');
     }
 
-    function actualizarFicha(id,name,surname,car,color){
-        $('#ficha').append('<p class="mensajero">Mensajero Nº: ' + id + '</p>');
+    function actualizarFicha(id,name,surname,car,color,score)
+        {
+            var puntaje=dibujarEstrellas(score,"white");
+
+            
+            
+                $('#ficha').append('<p class="mensajero">Mensajero Nº: ' + id + '</p>');
+                $('#ficha').append('<p class="mensajero">Puntaje: ' + puntaje + '</p>');
+
 				$('#ficha').append('<p class="mensajero">Nombre: ' + name + ' ' + surname + '</p>');
-				$('#ficha').append('<p class="mensajero">Informacion del vehiculo: ' + car + ' (' + color + ')</p>');
+                $('#ficha').append('<p class="mensajero">Informacion del vehiculo: ' + car + ' (' + color + ')</p>');
+                
+                
 
     }
 
+    function dibujarEstrellas(score,color){
+        var puntaje="";
+            var noscore=5-score;
+            console.log(score+" "+noscore)
+
+            for (var i=0;i<score;i++)
+            {
+               
+               puntaje=puntaje+"<i class='fas fa-star' style='color:white'"+color+"></i>\n"; 
+               
+            }
+            for (var i=0;i<noscore;i++)
+            {
+
+               puntaje+="<i class='far fa-star' style='color:white'"+color+"></i>\n"; 
+              
+            }
+            console.log(puntaje);
+            return puntaje;
+            
+    }
+
 }
+
