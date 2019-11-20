@@ -3,14 +3,10 @@ var logo = document.getElementById("logo");
 var functional = document.getElementById("functional");
 var hamburger = document.getElementById("hamburger");
 var menulateral = document.getElementById("menulateral");
-var fondo = document.getElementById("fondo");
+var fondo = document.getElementById("fondo2");
 
 
-fondo.addEventListener('click', function (e) {
-  menulateral.style.width = "0";
-  hamburger.style.width = "50px";
 
-});
 document.addEventListener('scroll', function (e) {
   var scroll = window.pageYOffset;
 
