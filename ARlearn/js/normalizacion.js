@@ -157,18 +157,7 @@ var bootstrap = function () {
 			}).addTo(map);
 	});
 }
-function esconder(selector, element, input) {
-	var nor = document.getElementById(selector);
-	var norm = document.getElementById(element);
-	if (element.value == "") {
-		$('#' + selector).empty();
-		nor.style.opacity = 0;
-		norm.style.height = 0;
-		nor.style.height = 0;
-	}
 
-
-}
 
 function esconderOpciones(input, valor, contenedor) {
 
