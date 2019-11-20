@@ -106,6 +106,7 @@ ul li
   display: block;
   position: absolute;
   right: -0.20em;
+  top: 0.65em;
   z-index: -1;
   width: 0.65em;
   height: 0.65em;
@@ -612,7 +613,8 @@ i{
   background-color: rgba(0, 0, 0, 0.918);
   color: white;
   position: absolute;
-  right: -460%;
+  right: -480%;
+  top: -2px;
   width: 400%;
   height: 2em;
   justify-content: center;
