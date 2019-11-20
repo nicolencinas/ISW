@@ -59,8 +59,8 @@ function obtenerMensajeros(elemento)
     incidencias.listarIncidencias();
 }
 
-function obtenerRutas(elemento){
-    mensajeros.listarRutas(elemento);
+function seleccionarMensajero(elemento){
+    mensajeros.seleccionarMensajero(elemento);
 }
 
 function iniciarPedido(){

@@ -28,7 +28,7 @@ var Mensajeros = function (elemento,
 	return {
 		listarMensajeros: listarMensajeros,
 		guardarInfoMapa: guardarInfoMapa,
-		listarRutas: listarRutas,
+		seleccionarMensajero: seleccionarMensajero,
 		moverMensajero: moverMensajero
 	}
 
@@ -164,7 +164,7 @@ var Mensajeros = function (elemento,
 
 	}
 
-	function listarRutas(elemento) {
+	function seleccionarMensajero(elemento) {
 		var urlpedido = elemento[elemento.selectedIndex].value;
 		var req = parseInt(urlpedido);
 
